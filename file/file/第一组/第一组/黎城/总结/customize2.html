@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+        <title>Test</title>
+        <style type="text/css" >
+            html,body
+            {
+                height:100%;
+                width:100%;
+                padding:0;
+                margin:0;
+            }
+
+            .dialog
+            {
+                position:fixed;
+                width:300px;
+                height:300px;
+                top:50%;
+                left:50%;
+                margin-top:-200px;
+                margin-left:-200px;
+                box-shadow:2px 2px 4px #ccc;
+                background-color:#f1f1f1;
+                z-index:30;
+                display:none;
+            }
+
+            .dialog .title
+            {
+                font-size:16px;
+                font-weight:bold;
+                color:#fff;
+                padding:4px;
+                background-color:#404040;
+            }
+
+            .dialog .close
+            {
+                width:20px;
+                height:20px;
+                margin:3px;
+                float:right;
+                cursor:pointer;
+            }
+
+            .pageCover
+            {
+                width:100%;
+                height:100%;
+                position:absolute;
+                z-index:10;
+                background-color:#666;
+                opacity:0.5;
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="pageCover" class="pageCover"></div>
+
+    <input type="button" value="Dialog Test" onclick="openDialog();"/>
+
+    <div id="dlgTest" class="dialog">
+        <img class="close"  alt=""  src="images/delete.png"/>
+        <div class="title">Dialog</div>
+        <div class="content">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">    
+        function openDialog(){       
+            var dlg=new Dialog('dlgTest');
+            var fnevent1;	
+            dlg.addHandler('close',function(){
+                document.getElementById('pageCover').style.display='none';
+            });
+            dlg.addHandler('close',fnevent1=function(){
+                console.info("测试成功");
+            });
+			dlg.removeHandler('close',fnevent1);
+            document.getElementById('pageCover').style.display='block';
+            dlg.show();
+        }
+		
+		function Dialog(id){
+             EventTarget.call(this)//继承EventTarget中方法,apply(object,Array[])
+		    //EventTarget.apply(this);
+		    //this.prototype=new EventTarget();
+            this.id=id;
+            var that=this;
+            document.getElementById(id).children[0].onclick=function(){
+                that.close();
+            }
+        }
+		
+		function EventTarget(){
+		    this.fn=/^(function\s*)(\w*\b)/;
+            this.handlers={};
+        }
+        //prototype克隆方法
+        EventTarget.prototype={
+            constructor:EventTarget,
+            addHandler:function(type,handler){		  
+                if(typeof this.handlers[type]=='undefined'){
+                    this.handlers[type]=new Array();
+                }
+                this.handlers[type].push(handler);
+            },
+            removeHandler:function(type,handler){
+                if(this.handlers[type] instanceof Array&&typeof handler==="function"){
+                    var handlers=this.handlers[type];					
+                    for(var i=0;i<handlers.length;i++){			
+					   /* console.info(handler[i]==handler);*/
+                        if(handlers[i].toString().replace(this.fn,'$1')===handler.toString().replace(this.fn,'$1')){
+                            handlers.splice(i,1);
+                            break;
+                        }
+                    }
+                }else{
+				     delete this.handlers[type];
+				}
+            },
+            trigger:function(event){
+                if(this.handlers[event.type] instanceof Array){
+                    var handlers=this.handlers[event.type];
+                    for(var i=0,len=handlers.length;i<len;i++){
+                        handlers[i](event);
+                    }
+                }
+            }
+        }
+		 //寄生式组合继承的核心代码，这种继承方式是目前公认的JavaScript最佳继承方式
+        function extend(subType,superType){
+            var prototype=Object(superType.prototype);
+            prototype.constructor=subType;
+            subType.prototype=prototype;
+        }
+
+        extend(Dialog,EventTarget);
+        
+       
+        Dialog.prototype.show=function(){
+            var dlg=document.getElementById(this.id);
+            dlg.style.display='block';
+            dlg=null;
+        }
+
+        Dialog.prototype.close=function(){
+            var dlg=document.getElementById(this.id);
+            dlg.style.display='none';
+            dlg=null;
+            this.trigger({type:'close'});
+        }
+
+       
+    </script>
+    </body>
+<html>

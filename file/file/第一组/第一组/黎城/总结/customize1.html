@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+        <title>Test</title>
+        <style type="text/css" >
+            html,body
+            {
+                height:100%;
+                width:100%;
+                padding:0;
+                margin:0;
+            }
+
+            .dialog
+            {
+                position:fixed;
+                width:300px;
+                height:300px;
+                top:50%;
+                left:50%;
+                margin-top:-200px;
+                margin-left:-200px;
+                box-shadow:2px 2px 4px #ccc;
+                background-color:#f1f1f1;
+                z-index:30;
+                display:none;
+            }
+
+            .dialog .title
+            {
+                font-size:16px;
+                font-weight:bold;
+                color:#fff;
+                padding:4px;
+                background-color:#404040;
+            }
+
+            .dialog .close
+            {
+                width:20px;
+                height:20px;
+                margin:3px;
+                float:right;
+                cursor:pointer;
+            }
+
+            .pageCover
+            {
+                width:100%;
+                height:100%;
+                position:absolute;
+                z-index:10;
+                background-color:#666;
+                opacity:0.5;
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="pageCover" class="pageCover"></div>
+
+    <input type="button" value="Dialog Test" onclick="openDialog();"/>
+
+    <div id="dlgTest" class="dialog">
+        <img class="close"  alt=""  src="images/delete.png"/>
+        <div class="title">Dialog</div>
+        <div class="content">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">     
+	   function openDialog(){
+			var dlg=new Dialog('dlgTest');
+			document.getElementById('pageCover').style.display='block';
+	        
+			dlg.close_handler=function(){
+				document.getElementById('pageCover').style.display='none';
+			}
+			dlg.show();
+	  }      
+      function Dialog(id){
+            this.id=id;
+            this.close_handler=null;
+            var that=this;
+            document.getElementById(id).children[0].onclick=function(){
+                that.close();
+                if(typeof that.close_handler=='function')
+                {
+                    that.close_handler();
+                }
+            }
+        }   
+
+      Dialog.prototype.show=function(){
+           var dlg=document.getElementById(this.id);
+            dlg.style.display='block';
+            dlg=null;
+        }
+
+        Dialog.prototype.close=function(){
+           var dlg=document.getElementById(this.id);
+            dlg.style.display='none';
+            dlg=null;
+        } 
+    </script>
+    </body>
+<html>

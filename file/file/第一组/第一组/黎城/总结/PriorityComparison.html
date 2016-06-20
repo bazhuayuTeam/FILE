@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div id="name1" style="border:1px solid red;padding:10px 10px 10px 10px;" style="border:1px solid red;padding:10px 10px 10px 10px;">点击</div>
+<div id="name2" style="border:1px solid green;padding:10px 10px 10px 10px;" style="border:1px solid green;padding:10px 10px 10px 10px;">点击</div>
+<div id="info"></div>
+<script type="text/javascript">
+var name1=document.getElementById('name1'); //要注意
+var name2=document.getElementById('name2'); //要注意
+var info=document.getElementById('info');
+console.info(name1.attachEvent);
+if(name1.attachEvent){ //对于attachEvent前面的target我们一定要保证不为空
+alert("测试");
+name1.attachEvent('onclick',function () { info.innerHTML += "红色" + "<br>"; });
+name1.attachEvent('onclick',function () { info.innerHTML += "绿色" + "<br>"; });
+}else{
+name2.addEventListener('click',function () { info.innerHTML += "红色" + "<br>"; },false);
+name2.addEventListener('click',function () { info.innerHTML += "绿色" + "<br>"; },false);
+}
+// --></script>
+</body>
+</html> 
