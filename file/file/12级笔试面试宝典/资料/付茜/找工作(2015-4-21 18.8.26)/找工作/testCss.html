@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<script type="text/javascript">
+			var css = function(obj, name) {
+				var result;
+				name = name.toLowerCase();
+				if(obj.style && obj.style[name]) {
+					result = obj.style[name];
+				}
+				else if(obj.currentStyle) {
+					 name = name.replace(/\-([a-z])([a-z]?)/ig,function(s,a,b){return a.toUpperCase()+b.toLowerCase();});
+					 result = obj.currentStyle[name];
+				}
+				else if(document.defaultView && document.defaultView.getComputedStyle) {
+					var w3cStyle = document.defaultView.getComputedStyle(obj, null);
+					result = w3cStyle.getPropertyValue(name);
+				}
+				if(result.indexOf("px") != -1) {
+					result = result.replace(/(px)/i,'');
+				}
+				return result;
+			};
+
+			function showStyle() {
+				var obj = document.getElementById("outer");
+				alert(css(obj, "background-color"));
+			}
+		</script>
+		<style type="text/css">
+			#outer{
+				background-color: red;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "outer">
+		</div>
+		<input type = "button" value = "Test" onclick = "showStyle();"/>
+	</body>
+</html>

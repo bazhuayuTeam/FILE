@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>学习之旅第一课 </title>
+</head>
+<body>
+    <div>学习之旅第一课  </div> 
+    <div style="float:left;height:220px;width:200px;">
+        <canvas id="canvas" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        strokeStyle学习
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        //画一个矩形  线条的颜色
+        context.strokeStyle = "#000";//设置或返回填充绘画的颜色、渐变或模式
+        //前两个参数是左上角的坐标x,y   后两个参数是宽，高
+        context.strokeRect(20, 20, 40, 20);
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+        <canvas id="canvas2" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        fillStyle学习
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas2");
+        var context = canvas.getContext("2d");
+        //填充一个矩形  填充的颜色
+        context.fillStyle = "#000";// 设置或返回用于笔触的颜色、渐变或模式
+        //前两个参数是左上角的坐标x,y   后两个参数是宽，高
+        context.fillRect(20, 20, 40, 20);
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+        <canvas id="canvas3" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        shadowBlur
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas3");
+        var context = canvas.getContext("2d");
+        //画一个矩形  线条的颜色
+       
+        context.shadowBlur = 10;//属性设置或返回阴影的模糊级数 100代表清晰度最好
+        context.shadowColor = "black";// 属性设置或返回用于阴影的颜色
+        context.shadowOffsetX = 20;//属性设置或返回形状与阴影的水平距离
+        // shadowOffsetX=0 指示阴影位于形状的正下方。
+        // shadowOffsetX=20 指示阴影位于形状 left 位置右侧的 20 像素处。
+        // shadowOffsetX=-20 指示阴影位于形状 left 位置左侧的 20 像素处。
+        context.shadowOffsetY = 20;//属性设置或返回形状与阴影的垂直距离。
+        //shadowOffsetY=0 指示阴影位于形状的正下方。
+        //shadowOffsetY=20 指示阴影位于形状 top 位置下方的 20 像素处。
+        //shadowOffsetY=-20 指示阴影位于形状 top 位置上方的 20 像素处。
+        //前两个参数是左上角的坐标x,y   后两个参数是宽，高
+        context.fillRect(20, 20, 40, 20);
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+        <canvas id="canvas4" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        createLinearGradient学习1
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas4");
+        var context = canvas.getContext("2d");
+        var g =context.createLinearGradient(0, 0, 0, 140);
+        //x0	渐变开始点的 x 坐标
+        //y0	渐变开始点的 y 坐标
+        //x1	渐变结束点的 x 坐标
+        //y1	渐变结束点的 y 坐标
+        g.addColorStop(0, "black");
+        g.addColorStop(0.5, "red");
+        g.addColorStop(1, "white");
+        //stop	介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。
+        //color	在结束位置显示的 CSS 颜色值
+        context.fillStyle = g;
+        context.fillRect(20, 20, 140, 150);
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+        <canvas id="canvas5" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        createLinearGradient学习2
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas5");
+        var context = canvas.getContext("2d");
+        var g = context.createLinearGradient(0, 0, 0, 140);
+        //x0	渐变开始点的 x 坐标
+        //y0	渐变开始点的 y 坐标
+        //x1	渐变结束点的 x 坐标
+        //y1	渐变结束点的 y 坐标
+        g.addColorStop(0, "black");
+        g.addColorStop(0.5, "red");
+        g.addColorStop(1, "white");
+        //stop	介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。
+        //color	在结束位置显示的 CSS 颜色值
+        context.strokeStyle = g;
+        context.strokeRect(20, 20, 140, 150);
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+        <div>
+            <button onclick="draw('repeat')">Repeat</button>
+            <button onclick="draw('repeat-x')">Repeat-x</button>
+            <button onclick="draw('repeat-y')">Repeat-y</button>
+            <button onclick="draw('no-repeat')">No-repeat</button>
+         </div>
+        <div>
+           <img id="img" src="image/Q.png"/>
+        </div>
+        <canvas id="canvas6" height="100" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        createPattern学习
+    </div>
+    <script type="text/javascript">
+        function draw(dic) {
+            var canvas = document.getElementById("canvas6");
+            var context = canvas.getContext("2d");
+            var img = document.getElementById("img");
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            alert(dic);
+            var pat = context.createPattern(img, dic);
+            context.rect(5, 0, 200, 90);
+            context.fillStyle = pat;
+            context.fill();
+        }
+       
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+        <canvas id="canvas7" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        createRadialGradient学习
+    </div>
+    <script type="text/javascript">
+        var x1 = 100;//起始圆的坐标x
+        var x2 = 100;//起始圆的坐标y
+        var r1 = 1;//起始圆的半径
+        var y1 = 100;//结束圆的坐标x
+        var y2 = 100;//结束圆的坐标y
+        var r2 = 100;//结束圆的半径
+        var fan = true;
+        function remainTime() {
+            if (r1 > 32||r1<1) {
+                fan = !fan;
+            }
+            console.log(fan);
+            if (fan) {
+                r1 = r1 + 1;
+                r2 = r2 - 2;
+            } else {
+                r1 = r1 - 1;
+                r2 = r2 + 2;
+            }
+            drawRa();
+            setTimeout("remainTime()", 500);
+        }
+        remainTime();
+        function drawRa() {
+            var canvas = document.getElementById("canvas7");
+            var context = canvas.getContext("2d");
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            var Radial = context.createRadialGradient(x1, y1, r1, x2, y2, r2);
+            Radial.addColorStop(0, "red");
+            Radial.addColorStop(0.5, "blue");
+            Radial.addColorStop(1, "white");
+            context.fillStyle = Radial;
+            context.fillRect(0, 0, 200, 200);
+            context.fill();
+        }
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+    <canvas id="canvas8" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+    linecap学习
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas8");
+        var context = canvas.getContext("2d");
+        context.beginPath();
+        context.lineCap = "round";
+        context.moveTo(20, 20);
+        context.lineTo(100, 20);
+        context.moveTo(40, 20);
+        context.lineWidth = 20;
+        context.lineTo(120, 20);
+        context.stroke();
+    </script>
+    <div style="float:left;height:220px;width:200px;">
+        <canvas id="canvas9" height="200" width="200" style="border:1px solid #d3d3d3;">你的浏览器不知道html5 canvas</canvas>
+        linecap学习
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas9");
+        var context = canvas.getContext("2d");
+        context.beginPath();
+        context.lineWidth = 20;
+        context.lineCap = "round";
+        //默认的值是
+        //alert(context.lineJoin);
+        context.lineJoin = "round";//lineJoin 属性设置或返回所创建边角的类型，当两条线交汇时。
+
+        //context.lineJoin="bevel|round|miter";
+        context.moveTo(20, 20);
+        context.lineTo(100, 20);
+        context.lineTo(100,100);
+        context.stroke();
+    </script>
+    <a target="_blank" href="customPlugin/progressBar/progressBar.html">进度条</a>
+    <a target="_blank" href="customPlugin/progressRing/progressRing.html">进度环</a>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>董辉超帅</title>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			window.onload = function() {
+				var contextMenuObj = document.getElementById("contextMenu");
+				document.oncontextmenu = block;
+				document.body.onmouseup = function(event) {
+					event = event ? event : window.event;
+					if(event.button == 2) {
+						var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+						var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+						var x = event.pageX || event.clientX + scrollX;
+						var y = event.pageY || event.clientY + scrollY;
+						contextMenuObj.style.left = x + "px";
+						contextMenuObj.style.top = y + "px";
+						contextMenuObj.style.display = "block";
+					}
+				}
+
+				//阻止时事件冒泡
+				contextMenuObj.onclick = function(event) {
+					event = event || window.event;
+					if(event.stopPropagation) {
+						event.stopPropagation();
+					}
+					else {
+						event.cancelBubble();
+					}
+				}
+
+				//点击其他地方隐藏
+				document.onclick = function() {
+					contextMenuObj.style.display = "none";
+				}
+
+				var menuItems = getElementsByClassName("contextMenuItem", contextMenuObj);
+				//给每个item添加click事件
+				for(var i = 0, len = menuItems.length; i < len; i++) {
+					var item = menuItems[i];
+					item.onclick = function(event) {
+						event = event ? event : window.event;
+						var target = event.target ? event.target : event.srcElement;
+						contextMenuObj.style.display = "none";
+					}
+				}
+
+			}
+
+			function block(event) {
+				event = event ? event : window.event;
+				if(event.preventDefault) {
+					event.preventDefault();
+				}
+				else {
+					event.returnValue = false;
+				}
+			}
+
+			function getElementsByClassName(className, root, tagName) {
+				if(root) {
+					root = typeof root === "string" ? document.getElementById(root) : root;
+				}
+				else {
+					root = document.body;
+				}
+				tagName = tagName || "*";
+				if(document.getElementsByClassName) {
+					return root.getElementsByClassName(className);
+				}
+				else {
+					var allTags = root.getElementsByTagName(tagName);
+					var results = [];
+					var reg = new RegExp(className, "i");
+					for(var i = 0, len = allTags.length; i < len; i++) {
+						if(allTags[i].className.search(reg) > -1) {
+							results.push(allTags[i]);
+						}
+					}
+					return results;
+				}
+			}
+		</script>
+		<style type="text/css">
+			#contextMenu{
+				position:absolute;
+				width: 200px;
+				overflow: hidden;
+				display: none;
+				background-color: red;
+			}
+			#contextMenu>ul,#contextMenu>ul>li{
+				margin: 0;
+				padding:0;
+			}
+			#contextMenu>ul>li{
+				width: 100%;
+				float: left;
+				list-style: none;
+			}
+			body,html{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "contextMenu">
+			<ul>
+				<li>test1</li>
+				<li>test2</li>
+				<li>test3</li>
+			</ul>
+		</div>
+	</body>
+</html>

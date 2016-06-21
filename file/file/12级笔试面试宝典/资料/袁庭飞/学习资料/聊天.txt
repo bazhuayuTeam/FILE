@@ -1,0 +1,65 @@
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int p,q,l,r;
+	     p=sc.nextInt();
+	     q=sc.nextInt();
+	     l=sc.nextInt();
+	     r= sc.nextInt();
+	     int min =0;
+		int max =0;
+	     int[][] dataA = new int[p][2];
+	     int[][] dataB = new int[q][2];
+	     for (int i = 0; i < p; i++) {
+			dataA[i][0] = sc.nextInt();
+			if(dataA[i][0]<min){
+				min = dataA[i][0];
+			}
+			dataA[i][1] = sc.nextInt();
+			if(dataA[i][0]>max){
+				max = dataA[i][1];
+			}
+		 }
+	     for (int i = 0; i < q; i++) {
+				dataB[i][0] = sc.nextInt();
+				if(dataB[i][0]<min){
+					min = dataB[i][0];
+				}
+				dataB[i][1] = sc.nextInt();
+				if(dataB[i][0]>max){
+					max = dataB[i][1];
+				}
+		 }
+	     int count = 0;
+	     for (int i = l; i <=r; i++) {
+	    	 int[][] dataC = new int[q][2];
+	    	 for (int j = 0; j < dataB.length; j++) {
+				dataC[j][0] = dataB[j][0]+i;
+				dataC[j][1] = dataB[j][1]+i;
+			}
+	    	 for (int k = min; k <=max; k++) {
+					if (is(dataA, k)&&is(dataC, k)) {
+						count++;
+						break;
+					}
+			 }
+		 }
+	     System.out.println(count);
+	     	
+
+	}
+	public static boolean is(int[][] a,int i) {
+		
+		for (int j = 0; j < a.length; j++) {
+			if (i>=a[j][0]&&i<=a[j][1]) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+}

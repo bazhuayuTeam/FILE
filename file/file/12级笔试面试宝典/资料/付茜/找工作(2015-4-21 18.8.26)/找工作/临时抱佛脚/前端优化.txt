@@ -1,0 +1,24 @@
+1. 网速相同的情况下，下载一个100kb的图片比下载两个50kb的图片要快，所以，减少http请求
+   合并图片(cssSprites),合并css和js文件；图片较多的时候也可以使用lazyload等技术进行优化
+2. repaint:元素的外观被改变，但是没有改变布局（如改变visibility、outline、背景色等等）
+   reflow:dom的变化影响到了元素的几何属性，浏览器会重新计算元素的几何属性，如果reflow过于频繁，cpu使用率就会暴涨
+   改变样式的时候最好使用class，或则cssText
+   如果有动画效果的元素，设置它的position属性为fixed或者absolute
+3. 减少对dom的操作
+   dom操作天生就慢
+   考虑大量dom循环的性能开销，在循环结束时一次写入
+   减少对dom的查询和修改
+4. 使用json来进行数据交换，相同的数据序列化后一半json比xml小，而且json是javascript的原生格式。
+5. 高效使用html标签和css样式
+   css是用来渲染页面的，但是也存在效率问题
+6. 使用cdn（内容分发网络)
+7. css放在head中，javascript放在body的最后
+   javascript会阻塞页面的渲染
+   当网速慢时，html代码加载完了css没加载完，会导致页面没有样式难以阅读
+8.使用yuicompressor压缩css或者js
+9.压缩图片和使用sprite技术
+  图片压缩的方法:
+  	1. 缩小图片分辨率
+ 	2. 改变图片格式
+	3. 降低图片保存质量
+10. 注意控制cookie大小和污染

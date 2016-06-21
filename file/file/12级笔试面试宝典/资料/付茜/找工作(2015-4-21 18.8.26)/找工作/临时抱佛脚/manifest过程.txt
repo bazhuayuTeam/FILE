@@ -1,0 +1,19 @@
+1. 在服务端创建一个manifest文件，文件最好以appcache为文件名,并且mime-type必须是 text/cache-manifest类型
+2. manifest格式:
+
+CACHE MANIFEST
+CACHE:
+index.html
+style.css
+images/logo.png
+scripts/main.js
+NETWORK:
+login.jsp
+FALLBACK:
+/index.jsp /404.html
+
+3. 在页面的html元素添加属性manifest
+4. 更新缓存:
+   (1) 用户清空浏览器缓存
+   (2) manifest文件被修改
+   (3) 有程序来更新缓存

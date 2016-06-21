@@ -1,0 +1,13 @@
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+-khtml-border-radius:10px;
+border-radius:10px;
+
+-moz-box-shadow:20px 10px 7px #ccc	//水平阴影的位置 垂直阴影的位置 模糊距离 阴影颜色
+-webket-box-shadow:20px 10px 7px #ccc
+box-shadow:20px 10px 7px #ccc
+
+
+-webkit-border-image:url(border.png) 30 30 round; //图片路径 边框向内偏移 宽度 repeat round stretched
+-o-border-image:url(border.png) 30 30 round;
+border-image:url(borde.png) 30 30 round;

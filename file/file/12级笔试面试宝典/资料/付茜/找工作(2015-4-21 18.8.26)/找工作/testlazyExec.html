@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>董辉超帅</title>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			var layExec = (function(){
+				var timeoutId
+				return function(data, fn, timeout) {
+					if(timeoutId) {
+						clearTimeout(timeoutId);
+					}
+					else {
+						
+						if(typeof fn === "function") {
+							timeout = timout || 500;
+							timeoutId = setTimeout(fn, timeout);
+						}
+					}
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<div id = "contextMenu">
+			<ul>
+				<li>test1</li>
+				<li>test2</li>
+				<li>test3</li>
+			</ul>
+		</div>
+	</body>
+</html>

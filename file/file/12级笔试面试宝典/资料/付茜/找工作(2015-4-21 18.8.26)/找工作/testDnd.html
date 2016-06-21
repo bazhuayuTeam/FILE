@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<style>
+			#drag{background-color:red;width: 100px; height:100px;}
+		</style>
+		<script type="text/javascript">
+			var dragElement = null;
+			var isDraging = false;
+			var mouseX;
+			var mouseY;
+			var objectX;
+			var objectY;
+			window.onload = function() {
+				dragElement = document.getElementById("drag");
+				dragElement.onmousedown = down;
+				dragElement.onmousemove = move;
+				document.onmouseup = up;
+			}
+
+			function getEvent(event) {
+				return event ? event : window.event;
+			}
+
+			function down(event) {
+				isDraging = true;
+				var event = getEvent(event);
+				mouseX = parseInt(event.clientX);
+				mouseY = parseInt(event.clientY);
+				objectX = parseInt(dragElement.style.left);
+				objectY = parseInt(dragElement.style.top);
+			}
+
+			function move(event) {
+				if(isDraging) {
+					event = getEvent(event);
+					var x, y;
+					x = event.clientX - mouseX + objectX;
+					y = event.clientY - mouseY + objectY;
+					dragElement.style.top = y + "px";
+					dragElement.style.left = x + "px";
+				}
+			}
+
+			function up() {
+				isDraging = false;
+			}
+		</script>
+	</head>
+	<body style = "width:1550px;">
+		<div id = "drag" style = "position: relative;top:0px;left:0px;"></div>
+	</body>
+</html>

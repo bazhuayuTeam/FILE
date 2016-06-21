@@ -1,0 +1,3 @@
+ie: filter:alpha(opacity:10);
+other: opacity:0.1;
+   

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .context {
+            width: 400px;
+            height: 400px;
+        }
+        canvas {
+            
+        }
+    </style>
+</head>
+<body>
+    <div>自定义插件之进度环</div>
+    <div class="context">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script type="text/javascript" src="progressRing.js"></script>
+    <script type="text/javascript">
+            var setting = {
+            id: "canvas",//画布id 不可省略
+            raduis:"30",//进度环半径
+            x: 90,//进度环圆心x坐标
+            y: 90,//进度环圆心y坐标
+            width: 10,//进度环宽度 
+            time: 100,//进度刷新时间间隔 可省略 默认为1000毫秒
+            foregroundColor: "black",
+            backgroundColor: "blue",
+            runFunction: function () {
+                return 2;
+            },//每次变化的速率  度数
+            endFunction: function () {//结束时调用的函数
+                //alert("end");
+            },
+            startFunction: function () {//结束时调用的函数
+                //alert("start");
+            },
+            showText: true
+        }
+        initProgressRing(setting);
+    </script>
+</body>
+</html>

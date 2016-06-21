@@ -1,0 +1,45 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <style type="text/css">
+    #demo {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: relative;
+    border: 2px solid #333;
+}
+ 
+#demo:after, #demo:before {
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    left: 100%;
+    position: absolute;
+    width: 0;
+}
+ 
+#demo:after {
+    border-width: 10px;
+    border-left-color: #fff;
+    top: 20px;
+}
+ 
+#demo:before {
+    border-width: 12px;
+    border-left-color: #000;
+    top: 18px;
+}
+   
+    </style>
+    <body>
+        <div id="demo" class="div1"></div>
+       
+    </body>
+    <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    </html> 

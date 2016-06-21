@@ -1,0 +1,75 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+    //记录对象 name 代表路线名称、time代表时间
+    function point(name,time,startOrEnd){
+        return {name:name,time:time,startOrEnd:startOrEnd};
+    }
+
+    var n =3;//路线数
+    var station = [3,3,4];//每条路线的站
+    var stationtime =[[1,2,3],[1,1,7],[3,1,2,2]];//每个站停靠的时间
+    var stationfache = [30,60,80];//发车间隔时间
+    var allResult = [];//时间轴，全部以分钟计算
+    var result = [];//每路车的时间
+    var curTime = 200;//小明出发的时间
+    for(var i=0;i<n;i++){
+        var all=0;
+        for(var j=0;j<stationtime[i].length;j++){
+            all+=stationtime[i][j];
+        }
+        result.push(all);
+    }
+    for (var i = 0; i < station.length; i++) {
+        var time = 300;//代表6点发车
+        for (var j=0;j<=100; j++) {
+            allResult.push(point(i,time,"start"));
+            allResult.push(point(i,time+result[i],"end"));
+            time+=stationfache[i];
+        };
+    };
+    //从小到大排序
+    allResult.sort(function(val1,val2){
+        if (val1.time<val2.time) {
+            return -1;
+        }else{
+            return 1;
+        }
+    });
+
+    allResult = allResult.filter(function(item){
+       return (item.time>=curTime);
+    });
+    //选出最短路径
+    var min=100000;
+    var mins=1;
+    for(var i=0;i<n;i++){
+        var pointStart;
+        var pointend;
+        for(var j=0;j<allResult.length;j++){
+            if(allResult[j].startOrEnd=="start"&&allResult[j].name==i){
+                pointStart = allResult[j];
+                break;
+            }
+        }
+        for(var j=0;j<allResult.length;j++){
+            if(allResult[j].startOrEnd=="end"&&allResult[j].name==i&&allResult[j].time>pointStart.time){
+                pointend = allResult[j];
+                break;
+            }
+        }
+        if ((pointend.time-curTime)<min) {
+                mins=(i+1);
+        };
+        console.log((i+1)+"路线花费"+(pointend.time-curTime));
+    }
+     console.log("小明该选择"+mins+"路线");
+    </script>
+    </html> 

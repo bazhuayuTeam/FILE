@@ -1,0 +1,7 @@
+1. var n = 1500005; n.toLocaleString();
+2. mm = mm.split("").reverse().join("").replace(/(\d{3})/g, "$1,").split("").reverse().join("");
+   mm = mm.split("").reverse().join("").replace(/(\d{3})(?=[^$])/g, "$1,").split("").reverse().join("");
+  (?:exp) 	匹配exp,不捕获匹配的文本，也不给此分组分配组号
+3. function(num) {
+	var aa = num.toString();
+   }

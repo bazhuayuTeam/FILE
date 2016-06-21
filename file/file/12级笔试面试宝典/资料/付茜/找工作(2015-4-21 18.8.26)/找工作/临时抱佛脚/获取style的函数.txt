@@ -1,0 +1,4 @@
+1. 从本身style属性里面取,obj.style.name
+2. 判断obj是否拥有, obj.currentStyle.name;
+3. document.defaultView.getComputedStyle(obj, null);
+   style.getPropertyValue(name);

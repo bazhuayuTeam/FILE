@@ -1,0 +1,13 @@
+1. 给图片定义两个属性，一个是src表示暂时要显示的图片，可以为透明，一个realSrc为真正显示的图片,并且为了友好的交互，最好给图片设置等待的gif图片
+1. 给window添加onscroll事件，延迟执行
+2. 每次延迟执行的时候，
+	先判断当前页面距离文档顶部滚动的距离（window.pageYOffset || document.documentElement.scrollTop），                 存至pagetop
+        再判断当前显示页面的底部距离文档顶部的距离（pagetop + window.innerHight || document.documentElement.clientHeight)  存至pagebottom
+        
+        获取页面中每张图片的顶部距离文档顶部的距离 getBoundingClientRect().top + pagetop                                   存至imgtop
+        获取页面中每张图片的底部距离文档顶部的距离 imgtop + Number(this.getStyle(o, 'height').replace('px', ''))           存至imgbottom
+        最后再判断图片是否在视口之中,有两种情况:
+             imgtop > pagetop && imgtop < pagebottom || .....
+       
+   
+        

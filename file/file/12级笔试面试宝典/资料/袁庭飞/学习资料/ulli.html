@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+li{
+
+
+}
+	</style>
+}
+</head>
+<body>
+	<ul>
+		<li>sdasdas</li>
+		<li>sadsda</li>
+		<li>asd</li>
+		<li>asdas</li>
+	</ul>
+	<script type="text/javascript">
+	var li= document.getElementsByTagName("li");
+
+
+	li[0].addEventListener("click",do2,false);
+	li[0].addEventListener("click",do1,true);
+	function do1(){
+		alert(1);
+	}
+	function do2(){
+		alert(2);
+	}
+	// for(var i=0;i<li.length;i++){
+	// 	li[i].i=i
+	// 	li[i].onclick=function(){
+	// 		alert(this.i);
+	// 	}
+
+	// }
+	</script>
+</body>
+</html>

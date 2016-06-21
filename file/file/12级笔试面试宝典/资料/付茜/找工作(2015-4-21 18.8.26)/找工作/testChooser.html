@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>自定义选择器</title>
+		<script type="text/javascript">
+			var query = function(selector) {
+				var reg = /^(#)?(\.)?(\w+)$/img;
+				var regResult = reg.exec(selector);
+				var results = [];
+				//如果是id选择器
+				if(regResult[1]) {
+					if(regResult[3]) {
+						results.push(document.getElementById(regResult[3]));
+					}
+				}
+				//如果是类选择器
+				else if(regResult[2]) {
+					if(regResult[3]) {
+						results = getElementsByClassName(regResult[3]);
+					}
+				}
+				//如果是标签选择器
+				else if(regResult[3]) {
+					results = transDomToArray(document.getElmentsByTagName(regResult[3]));
+				}
+				return results;
+			}
+
+			//自定义类选择器
+			function getElementsByClassName(className, root, tagName) {
+				var results = [];
+				if(root) {
+					root = typeof root === "string" ? document.getElementById(root) : root;
+				}
+				else {
+					root = document.body;
+				}
+				tagName = tagName || "*";
+				if(document.getElementsByClassName) {
+					results = transDomToArray(document.getElementsByClassName(className));
+				}
+				else {
+					var allTags = root.getElementsByTagName(tagName);
+					var classNameReg = new RegExp(className, "i");
+					for(var i = 0, len = allTags.length; i < len; i++) {
+						if(allTags[i].className.search(classNameReg) > -1) {
+							results.push(allTags[i]);
+						}
+					}
+				}
+				return results;
+			}
+
+			//将dom集合转化为数组
+			function transDomToArray(doms) {
+				var array = null;
+				try {
+					array = Array.prototype.slice.call(doms, 0);
+				} catch(ex) {
+					for(var i = 0, len = doms.length; i++) {
+						array.push(doms[i]);
+					}
+				}
+				return array;
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

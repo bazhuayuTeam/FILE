@@ -1,0 +1,6 @@
+F:\找工作\学习资料\HTML5\canvas\canvas\bin\canvas.dll.config
+F:\找工作\学习资料\HTML5\canvas\canvas\bin\canvas.dll
+F:\找工作\学习资料\HTML5\canvas\canvas\bin\canvas.pdb
+F:\找工作\学习资料\HTML5\canvas\canvas\obj\Debug\canvas.csprojResolveAssemblyReference.cache
+F:\找工作\学习资料\HTML5\canvas\canvas\obj\Debug\canvas.dll
+F:\找工作\学习资料\HTML5\canvas\canvas\obj\Debug\canvas.pdb

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<meta charset='utf-8'/>
+		<style>
+			#tbSort thead th{
+				cursor: pointer;
+			}
+		</style>
+		<script type="text/javascript">
+			function sortTable(index, dataType) {
+				var tableObj = document.getElementById("tbSort");
+				var tableBodyObj = tableObj.tBodies[0];
+				var tableRowObjs = tableBodyObj.rows;
+				var tableArray = [];
+				for(var i = 0, len = tableRowObjs.length; i < len; i++) {
+					tableArray.push(tableRowObjs[i]);
+				}
+				if(tableObj.sortCol == index) {
+					tableArray.reverse();
+				}
+				else {
+					tableArray.sort(getSortFunction(index, dataType));
+				}
+				var fragment = document.createDocumentFragment();
+				for(var i = 0, len = tableArray.length; i < len; i++) {
+					fragment.appendChild(tableArray[i]);
+				}
+				tableBodyObj.appendChild(fragment);
+				tableObj.sortCol = index;
+			}
+
+			function getSortFunction(index, dataType) {
+				return function(val1, val2) {
+					var value1, value2;
+					if(val1.cells[index].getAttribute("value")) {
+						value1 = convert(val1.cells[index].getAttribute("value"), dataType);
+						value2 = convert(val2.cells[index].getAttribute("value"), dataType);
+					}
+					else {
+						value1 = convert(val1.cells[index].firstChild.nodeValue, dataType);
+						value2 = convert(val2.cells[index].firstChild.nodeValue, dataType);
+					}
+					if(value1 < value2) {
+						return -1;
+					}
+					else if(value1 > value2) {
+						return 1;
+					}
+					else {
+						return 0;
+					}
+				}
+			}
+
+			function convert(value, dataType) {
+				switch(dataType) {
+					case "int" : 
+						return parseInt(value);
+					case "date" :
+						return new Date(Date.parse(value)); 
+					default:
+						return value.toString();
+				}
+			}
+		</script>
+	</head>
+	<body >
+		<table id = "tbSort">
+			<thead>
+				<th onclick = "sortTable(0)">类型</th>
+				<th onclick = "sortTable(1)">文件名</th>
+				<th onclick = "sortTable(2, 'date')">创建日期</th>
+				<th onclick = "sortTable(3, 'int')">文件大小</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td value='type1'>我是类型1</td>
+					<td>fileName1</td>
+					<td>9/3/2014</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td value='type1'>我是类型1</td>
+					<td>fileName2</td>
+					<td>9/5/2014</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td value='type'>我是类型</td>
+					<td>fileName3</td>
+					<td>10/3/2014</td>
+					<td>32</td>
+				</tr>	
+			</tbody>
+		</table>
+	</body>
+</html>

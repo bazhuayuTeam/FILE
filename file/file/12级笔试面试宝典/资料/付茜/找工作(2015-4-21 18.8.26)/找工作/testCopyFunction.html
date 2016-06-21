@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<script type="text/javascript">
+			var a = function(p1, p2) {
+			  console.info(p1 + p2);
+			}
+			function clone(obj) {
+			  if(typeof obj === "function") {
+			  	alert(obj);
+			    var result = new Function();
+			    /*for(var prop in obj) {
+			      result.push(obj[prop]);
+			    }
+			    return result; */
+			  }
+			}
+			var b = clone(a);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

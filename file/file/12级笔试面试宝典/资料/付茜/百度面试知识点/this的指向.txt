@@ -1,0 +1,20 @@
+function obj(name){
+    if(name){
+        this.name = name;
+    }
+    return this;
+}
+obj.prototype.name = "name2";
+var a = obj("name1");
+var b = new obj;
+ 
+console.log(a.name); // name1
+console.log(window.name); // name1
+console.log(b.name); // name2
+ 
+//一般函数直接调用，默认this执行全局window|global
+//通过obj('name1')调用，返回this引用，并传给a, 此时a等于window对象，即可输出属性name值
+ 
+//new操作， new obj 等价于 new obj() ,实例化一个对象，这时this指向obj,要拿到b.name的值
+//需要保证name属性存在，属性查找原则是先查找当前实例有没有属性，如果有就直接使用，如果没有就到原型上面找，再没有就接着原型链一步一步，这里为了和a.name作属性区别，使用了if(name)有条件地构建this的属性name
+//所以，现在实例name属性提供给a使用，原型上的name提供给b使用。

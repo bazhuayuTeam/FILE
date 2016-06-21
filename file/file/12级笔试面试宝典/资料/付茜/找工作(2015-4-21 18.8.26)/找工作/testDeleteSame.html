@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<meta charset='utf-8'/>
+		<script type="text/javascript">
+			var a1 = [1, 4, 7, 8, 7, 10];
+			a1 = deleteSame2(a1);
+			console.debug(a1);
+			function deleteSame1(a) {
+				var tempObj = {};
+				var result = [];
+				for(var i = 0, len = a.length; i < len; i++) {
+					if(!tempObj[a[i]]) {
+						tempObj[a[i]] = 1;
+						result.push(a[i]);
+					}
+				}
+				return result;
+			}
+
+			function deleteSame2(a) {
+				var result = [];
+				for(var i = 0, len = a.length; i < len; i++) {
+					for(var j = i + 1; j < a.length;) {
+						if(a[i] === a[j]) {
+							result.push(a.splice(j, 1)[0]);
+						}
+						else {
+							j++;
+						}
+					}
+				}
+				return result;
+			}
+		</script>
+	</head>
+	<body >
+		
+	</body>
+</html>

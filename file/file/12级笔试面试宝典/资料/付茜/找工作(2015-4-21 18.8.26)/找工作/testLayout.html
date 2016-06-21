@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				position: absolute;
+				background-color: #CCC;
+			}
+			#first{
+				width: 100px;
+				height: 150px;
+			}
+			#second{
+				top: 160px;
+				width: 100px;
+				height: 150px;
+			}
+			#third{
+				width: 200px;
+				height: 310px;
+				left: 110px;
+			}
+		</style>
+		<script type="text/javascript">
+			function zoom(id, x, y) {
+				var obj = document.getElementById(id);
+				var dw = obj.clientWidth;
+				var dh = obj.clientHeight;
+				obj.onmouseover = function() {
+					this.style.width = dw * x + "px";
+					this.style.height = dh * y + "px";
+					this.style.backgroundColor = "#f00";
+					this.style.zIndex = "1";
+				};
+				obj.onmouseout = function() {
+					this.style.width = "";
+					this.style.height = "";
+					this.style.backgroundColor = "";
+					this.style.zIndex = "";
+				}
+			}
+			window.onload = function() {
+				zoom("first", 1.25, 1.25);
+				zoom("second", 1.25, 1.25);
+				zoom("third", 1.25, 1.25);
+			}
+		</script>
+	</head>
+	<body>
+		<div id = "first"></div>
+		<div id = "second"></div>
+		<div id = "third"></div>
+	</body>
+</html>

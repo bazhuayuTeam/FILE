@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//首先是输入n,m
+		Scanner reader=new Scanner(System.in);
+		
+		String mn = reader.nextLine();
+		String[] mnarr = mn.split(" ");
+		int n = Integer.parseInt(mnarr[0]);
+		int m = Integer.parseInt(mnarr[1]);
+		
+		String classNum = reader.nextLine();
+		String[] classNumarr = classNum.split(" ");
+		int[] classNumInt = new int[classNumarr.length];
+		for(int i = 0;i<classNumarr.length;i++){
+			classNumInt[i] = Integer.parseInt(classNumarr[i]);
+		}
+		
+		//获得需要汽车的数量
+		int result = 1;
+		int max = 0;
+		for(int i = 0;i<classNumInt.length;i++){
+			max += classNumInt[i];
+			if(max>m){
+				result++;
+				max = classNumInt[i];
+			}
+		}
+		System.out.print(result);
+	}
+}

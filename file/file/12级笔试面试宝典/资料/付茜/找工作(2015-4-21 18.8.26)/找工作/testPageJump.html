@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>翻页</title>
+		<meta charset='utf-8'/>
+		<style>
+			#show{
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+			}
+			#pager li{
+				display: inline;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var ahrefs = document.getElementsByTagName("a");
+				var showDiv = document.getElementById("show");
+				for(var i = 0, len = ahrefs.length; i < len; i++) {
+					var ahref = ahrefs[i];
+					ahref.onclick = function(event) {
+						var html = this.innerHTML;
+						if(html == 1) {
+							showDiv.innerHTML = "第一页";
+						}
+						else if(html == 2) {
+							showDiv.innerHTML = "第二页";
+						}
+						else if(html == 3) {
+							showDiv.innerHTML = "第三页";
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body >
+		<div id="show">第一页</div>
+		<ul id="pager">
+			<li><a href = "javascript:void(0);">1</a></li>
+			<li><a href = "javascript:void(0);">2</a></li>
+			<li><a href = "javascript:void(0);">3</a></li>
+		</ul>
+	</body>
+</html>

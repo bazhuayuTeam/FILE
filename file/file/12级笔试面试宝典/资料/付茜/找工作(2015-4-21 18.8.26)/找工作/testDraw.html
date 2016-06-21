@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<style>
+			.dian{background-color:red;}
+		</style>
+	</head>
+	<body >
+		<script type="text/javascript">//功能：画实心圆//参数：圆心坐标，半径，精确度，背景颜色//主要用到了中学时的圆的一些特征公式呵呵
+		function SolidCircle(centreX, centreY, radius, precision, color){
+			var cx = Math.abs(parseInt(centreX));
+			var cy = Math.abs(parseInt(centreY)); 
+			var r = parseInt(radius<2 ? 60 : radius);
+			var p = parseInt(precision<1 ? 1 : precision);
+			var c = color; 
+			var y; 
+			for(var x=cx-r; x<=cx+r; x+=p){ 
+			 	y = cy - Math.sqrt(Math.pow(r, 2) - Math.pow(cx - x, 2));
+			 	document.write('<img style="background:'+c+'; border:1px solid '+c+'; width:'+p+'px; height:'+parseInt(2*Math.sqrt(Math.pow(r, 2) - Math.pow(cx - x, 2)))+'px; position:absolute; top:'+parseInt(y)+'px; left:'+parseInt(x)+'px;">'); 
+			 } 
+			 //alert("一共有 " + document.all.length + " 个 <img>");
+		}
+		SolidCircle(450, 150, 100, 1, "black");
+		</script>
+		</body>
+</html>

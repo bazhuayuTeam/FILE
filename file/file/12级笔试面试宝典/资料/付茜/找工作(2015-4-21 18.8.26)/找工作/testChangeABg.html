@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<meta charset='utf-8'/>
+		<script type="text/javascript">
+			window.onload = function() {
+				var targetAlinks = getElementsByClassName("test");
+				for(var i = 0, len = targetAlinks.length; i < len; i++) {
+					targetAlinks[i].style.backgroundColor = "yellow";
+				}
+				function getElementsByClassName(className) {
+					/*if(document.getElementsByClassName) {
+						return document.getElementsByClassName(className);
+					}*/
+					var reg = new RegExp(className, "i");
+					var alinks = document.getElementsByTagName("a");
+					var results = [];
+					for(var i = 0, len = alinks.length; i < len; i++) {
+						var thisClassName = alinks[i].className;
+						if(thisClassName.search(reg) != -1) {
+							results.push(alinks[i]);
+						}
+					}
+					return results;
+				}
+			}
+		</script>
+	</head>
+	<body >
+		<a href = "1234" class="test qwe">sdfsdfsdf</a>
+		<a href = "1234" class="test">sdfsdfsdasdasdasf</a>
+	</body>
+</html>

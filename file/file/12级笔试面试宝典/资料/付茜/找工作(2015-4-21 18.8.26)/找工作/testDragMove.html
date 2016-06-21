@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<style type="text/css">
+    a {
+        display: block;
+    }
+    #drag {
+        height: 100px;
+        width: 100px;
+        border: 1px solid #000;
+    }
+</style>
+<script type="text/javascript">
+	var dragging = false;
+	var test;
+	var mouseY;
+	var mouseX;
+	var mess = '';
+	var obj = {};
+	window.onload = function() {
+    	var oA = document.getElementsByTagName('a'),
+        	len = oA.length,
+        	i = 0,idx,
+        	reg = /(^(test)$)|(\s+test\s+)|(\s+(test)$)/;
+
+    	for ( ; i < len; i++ ) {
+       		if (reg.test(oA[i].className)) {
+            	oA[i].style.backgroundColor = 'yellow';
+        	}
+    	}
+
+    	// 给拖动元素绑定事件
+    	test = document.getElementById("drag");
+   		test.onmousedown = down;
+    	test.onmousemove = move;
+    	document.onmouseup = up;
+    	test.style.position = "relative";
+    	test.style.top = "0px";
+    	test.style.left = "0px";
+
+    	// 给页面中所有的元素创建对象结构
+   	 	var all = document.getElementsByTagName('*');
+    	var index = 0;
+    	for ( var i = 0; i < all.length; i++ ) {
+        	obj[all[i].nodeName + index] = {
+            	x1: all[i].offsetLeft,
+            	y1: all[i].offsetTop,
+            	width: all[i].offsetWidth,
+            	height: all[i].offsetHeight
+        	}
+        	index ++;
+    	}
+    //console.log(obj);
+	}
+
+	// 判断两个区域是否重合的方法
+	function isInArea(x1,y1,x2,y2,w1,h1,w2,h2) {
+    	return (x1+w1>x2) && (y1+h1>y2) && (x2+w2>x1) && (y2+h2>y1);
+	}
+
+	// 鼠标按下的事件 直接copy网上的代码
+	function down(event) {
+		event = event || window.event; 
+		dragging = true; 
+		mouseX = parseInt(event.clientX);
+		mouseY = parseInt(event.clientY);
+		objY = parseInt(test.style.top);
+		objX = parseInt(test.style.left);
+	}
+
+	// 同上, 鼠标移动的代码, 我加上了移动过程中判断区域重合情况的部分
+	function move(event){
+		event = event || window.event; 
+		if(dragging == true){
+			var x,y;
+			y = event.clientY - mouseY + objY;
+			x = event.clientX - mouseX + objX;
+			test.style.top = y + "px";
+			test.style.left = x + "px";
+
+        	// 以下是判断区域重合部分
+        	var w = test.offsetWidth;
+        	var h = test.offsetHeight;
+
+        	for ( var ele in obj ) {
+            	if(isInArea(x,y,obj[ele].x1,obj[ele].y1,w,h,obj[ele].width,obj[ele].height)) {
+                // 去重一下
+                if (mess.indexOf(ele) == -1) {
+                    mess += ele + '<br>';
+                }
+            	}
+        	}
+		}
+	}
+
+	// 鼠标停止以后打印该移动过程中发生重合的元素
+	function up(){
+		dragging = false;
+	    document.getElementById('show').innerHTML = mess;
+	    mess = "";
+	}
+</script>
+<div id="drag"></div>
+ <a href="#">test</a> 
+ <a href="#" class="test">test1</a> 
+ <a href="#">test</a> 
+ <a href="#" class="est test1">test1</a> 
+ <a href="#">test</a> 
+ <a href="#" class="test1 test">test12</a> 
+ <a href="#">test</a> 
+ <a href="#" class="test1 test test2">test12</a> 
+ <a href="#">test</a> 
+ <a href="#" class="test">test1</a> 
+ <a href="#">test</a> 
+ <a href="#" class="test">test</a> 
+ <a href="#">test</a> 
+ <a href="#" class="test">test</a> 
+ <a href="#">test</a> 
+ <div id="show"></div>
+</body>
+</html>

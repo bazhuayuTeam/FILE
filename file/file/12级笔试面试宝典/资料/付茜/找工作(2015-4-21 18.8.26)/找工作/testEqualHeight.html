@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>df</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap {
+				overflow: hidden;
+				padding: 0;
+				padding-left: 180px;
+			}
+			#first,#second {
+				height: auto;
+				margin-bottom: -10000px;
+				padding-bottom: 10000px;
+			}
+			#first{
+				display: inline;
+				float: left;
+				width: 180px;
+				margin-left:-180px;
+				background:#0CF;
+				word-wrap:break;
+			}
+			#second{
+				float: right;
+				width: 100%;
+				background: #FC6;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "wrap">
+			<div id='first'>123456</div>
+			<div id='second'>4567</div>
+		</div>
+	</body>
+</html>

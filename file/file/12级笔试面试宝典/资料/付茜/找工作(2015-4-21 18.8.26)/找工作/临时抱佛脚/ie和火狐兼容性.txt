@@ -1,0 +1,6 @@
+1.window.event e.event
+2.attachEvent addEventListener
+3.ie可直接通过对象点的方式获得自定义属性,ff必须通过getAttribute()来获得自定义属性
+4.ie:input.type只读,ff可写
+5.ie支持innerText和outerHTML ff支持textContent
+6.ie不支持document.getElementsByName和document.all[]

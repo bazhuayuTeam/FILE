@@ -1,0 +1,4 @@
+1. js文件放在head里面，阻塞浏览器解析html
+   解决方案：将js放在body的最后
+2. 有时在ie未声明时会出现此类问题<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+3. 在页面加载完成后，调用了document的write函数
