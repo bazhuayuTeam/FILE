@@ -2,261 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="833f3c14-f91c-48a6-816b-9c6eb285000d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/1-事件模型.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/1-原型.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/1-浏览器事件鼠标位置.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/1-盒子模型.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/1-闭包.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/移动前端/1.pc端与移动端在js方面有什么不同.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/10-图片的等比缩放.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/11-css垂直居中.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/12-ajax.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/12-高度和宽度.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/13-声明提前.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/14-arttemplate.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/14-ip的正则表达式.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/15-取出href参数.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/15-图片的预加载.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/16&amp;17-可编辑select.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/16-图片的预加载与懒加载.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/17-css选择符及优先级.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/18-css可继承和不可继承的属性.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/18-js作用域.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/19-常见块元素和行内元素.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/2-实现表格排序.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/2-雅虎前端优化.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/移动前端/2.判断是pc端还是移动端.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/20-js继承.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/20-管理css-js-image.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/2012级张海瑞 笔试题.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/2012级李方勋 笔试面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/2015各大名企网申时间和薪酬表.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/21-dom节点操作.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/21-js中的this.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/22-ajax交互模型.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/22-ie6下常见bug.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/23-yslow.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/24-cdn.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/25-js添加事件.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/25-png8.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/26-ie6解决positonFixed.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/26-浏览器内核.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/27-常见正则表达式.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/28-ie6Select冒出.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/28-jsCookie.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/29-position属性.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/29-什么是css层叠.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/3-使用html5的十个原因.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/3-算法（快速排序）.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/30-jqueryInit.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/30-模块化开发.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/31-ie适应圆角.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/31-了解nodejs.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/32-jsonp.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/32-什么是mvvm.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/33-nginx压缩.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/34-nginx配置详解.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/34-了解angularjs.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/35-escape&amp;encodeURI&amp;encodeURLComponent.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/36-js对象clone.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/36-js模板引擎.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/37-js预加载&amp;延迟加载.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/37-web标准.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/38-cssHack技巧.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/38-web3.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/39-angularjs的mvc.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/39-b与strong.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/4-html5十五大新特性.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/40-js的链式调用.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/40-title与h1的区别.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/41-应该用float吗.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/42-延迟执行.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/43-域名劫持.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/44-p标签和img标签的特性.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/44-ready&amp;onload.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/4道js面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/5-css3新特性.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/6-数组去重.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/6-深入了解css3新特性.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/7-amd规范.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/7-状态码.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/7-跨域访问.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/8-cmd规范.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/9-amd与cmd规范异同.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/AngularJS中文版.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/AngularJS的介绍与研究.pptx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/css/CSS参考手册.chm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/HTML5中文参考手册.chm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/HTML参考手册.chm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/黄凯/JAVA算法与数据结构.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/JavaScript/JavaScript参考手册.chm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/JavaScript权威指南(第6版)(中文版).pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/image/Q.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/黄凯/UITableView优化技巧.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/WEB前端开发面试题集锦.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/[www.java1234.com]十月百度，阿里巴巴，迅雷搜狗最新面试七十题（第201-270题）.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/笔试题/[www.java1234.com]百度web前端笔试面试题目.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/ajax.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/amd与cmd规范异同.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/canvas.csprojResolveAssemblyReference.cache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/bin/canvas.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/canvas.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/bin/canvas.pdb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/canvas.pdb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas.v12.suo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/css/css3属性手册.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/customPlugin/customPlugin.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/haha11103080105.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/haha11103080105s.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/JavaScript/jquery1.8.3_20121129.chm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/jsonp.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/js作用域.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/~$-Web前端开发工程师-简历.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/~$-b与strong.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/~$1-盒子模型.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/自我总结/~$2-延迟执行.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/~$7-状态码.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/~$里实习面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/【JavaScript高级程序设计（第3版）】中文 高清 .pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/专业的一套题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/互联网公司宣讲笔试面试安排.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/人人网js面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/百度/面试题/付茜百度二面.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/美团/面试题/付茜美团面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2016前端笔试题目/付茜（试题加答案）.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/凡客面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/别人整理的面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/简历/前端开发工程师.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/前端面试之菜锅语录.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2016前端笔试题目/周双+张川（试题加答案）.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/人人网/面试题/周双人人网面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/去哪儿网/面试题/周双去哪儿网面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/百度/面试题/周双百度一面.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/百度/面试题/周双百度二面.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/百度/面试题/周双百度面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/美团/面试题/周双美团面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/腾讯/面试题/周双腾讯面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/面试题/周双阿里一面.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/响应式Web设计：HTML5和CSS3实战.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2016前端笔试题目/孟兵（试题加答案）.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/常见面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2016前端笔试题目/张海瑞（试题加答案）.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/最新js面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2016前端笔试题目/李方勋（试题加答案）.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/杭州高新区（滨江）组团2016届毕业生招聘需求(电子科大).docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/某公司面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/爱奇艺面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/盒子模型.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/经典问题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/腾讯实习面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/腾讯面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2016前端笔试题目/蒋涛（试题加答案）.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2016前端笔试题目/袁庭飞+熊海+秦璐（试题加答案）.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/百度/面试题/袁庭飞百度一面.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/百度/面试题/袁庭飞百度二面.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/美团/面试题/袁庭飞美团面试题.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/简历/软件工程师.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/阿里实习面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/前端/阿里巴巴/笔试题/阿里巴巴2015校招前端在线笔试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/笔试题/阿里巴巴2015校招前端在线笔试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/面试题/阿里巴巴面试题.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/雅虎前端优化.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/移动-iOS/广州视源/面试题/黄凯CVTE面试题.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/移动-iOS/美团/面试题/黄凯美团一面.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/笔试面试题/移动-iOS/美团/面试题/黄凯美团二面.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/Properties/AssemblyInfo.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/JS兼容性问题.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/ScrollLoad.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/Web.Debug.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/Web.Release.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/Web.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/obj/Debug/canvas.csproj.FileListAbsolute.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/canvas.csproj.user" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/canvas.csproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/bin/canvas.dll.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/canvas.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas.sln" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/cc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/css3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/css兼容性问题.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/http状态码.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/http状态码.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/ie和火狐兼容性.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/imgReady.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/javascript中的单例模式.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/javascript中的工厂模式.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/js实现jquery选择器.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/js实现继承.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/manifest过程.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/customPlugin/progressBar/progressBar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/customPlugin/progressBar/progressBar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/customPlugin/progressRing/progressRing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/HTML5/canvas/canvas/customPlugin/progressRing/progressRing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/ss.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/test3blanck1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/test3blanck2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/test3blanck3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testAjax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testCalendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testChangeABg.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testChooser.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testCopyFunction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testCss.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testDeleteSame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testDnd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testDragMove.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testDraw.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testEditableSelect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testEqualHeight.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testEventCaptureAndBubble.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testExpression.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testFactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testImgReady.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testLayout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testLeft200.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testMiddle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testMiddleTop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testPageJump.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testPicCircleShow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testQuickSort.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testRightClick.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testSingleArray.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testTableSort.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testWrite.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/testlazyExec.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/this的指向.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/ulli.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/事件" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/前端优化.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/前端优化.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/去哪儿网js题.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/图片环绕.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/块级元素.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/好习惯造就好生活.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/布局.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/搬圆桌.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/数字隔三个显示.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/张海瑞/有道云笔记链接.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/框计算.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/浏览器打开URL的加载过程.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/滚动加载图片.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/知识点总结.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/移动端web开发.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/聊天.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/背景透明.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/获取style的函数.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/袁庭飞有道云笔记链接.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/袁庭飞/学习资料/装载乘客.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/输入url发生了什么.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/输入url发生了什么.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/闭包.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/找工作(2015-4-21 18.8.26)/找工作/临时抱佛脚/页面打开出现空白.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="file.iws" />
@@ -278,21 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="js排序页面.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="js排序页面.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/file/file/js排序页面.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.875">
-              <caret line="211" column="13" selection-start-line="211" selection-start-column="13" selection-end-line="211" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.30037314">
+              <caret line="195" column="14" selection-start-line="195" selection-start-column="14" selection-end-line="195" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="框计算.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="框计算.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/框计算.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16197184">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -443,15 +188,22 @@
       <option name="project" value="LOCAL" />
       <updated>1466433721984</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="file">
+      <created>1466511258305</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1466511258305</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24981189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24981189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -459,7 +211,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -498,14 +249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/file/js排序页面.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.875">
-          <caret line="211" column="13" selection-start-line="211" selection-start-column="13" selection-end-line="211" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/js实现jquery选择器.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.44542253">
@@ -516,8 +259,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/file/file/12级笔试面试宝典/资料/付茜/百度面试知识点/框计算.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16197184">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/file/js排序页面.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30037314">
+          <caret line="195" column="14" selection-start-line="195" selection-start-column="14" selection-end-line="195" selection-end-column="14" />
           <folding />
         </state>
       </provider>
