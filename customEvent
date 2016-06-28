@@ -9,3 +9,4 @@ var  _listener ={};
 var addEvent=function(type,fn){
   //....事件
 }；
+function 
