@@ -1,0 +1,23 @@
+自定义事件
+一、什么是自定义事件？
+自定义事件是有别于浏览器特定的行为事件，事件名称可以随意定义，可以通过特定的方法进行添加，触发，删除。
+
+二、自定义事件
+
+函数式实现
+var  _listener ={};
+var addEvent=function(type,fn){
+  //....添加
+}；
+var firstEvent=function(type){
+  //....触发
+};
+var removeEvent =function(type,fn){
+  //....删除
+};
+addEvent("alert",function(){
+  alert("弹出");
+});
+
+firstEvent(alert);
+但是，函数式的写法缺点显而易见，过多的暴露在外的全局变量。
