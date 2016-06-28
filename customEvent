@@ -7,6 +7,17 @@
 函数式实现
 var  _listener ={};
 var addEvent=function(type,fn){
-  //....事件
+  //....添加
 }；
-function 
+var firstEvent=function(type){
+  //....触发
+};
+var removeEvent =function(type,fn){
+  //....删除
+};
+addEvent("alert",function(){
+  alert("弹出");
+});
+
+firstEvent(alert);
+但是，函数式的写法缺点显而易见，过多的暴露在外的全局变量。
