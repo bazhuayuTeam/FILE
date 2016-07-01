@@ -21,3 +21,63 @@ DOD有三种规范：严格版本，过度版本，以及基于框架HTML的文�
 （2）HTML5为什么只需写<!DOCTYPE HTML>?
 因为HTML5是不遵循SGML官方的，SGML规范是一种标准通用标记语言（以下简称“通用标言”），是一种定义电子文档结构和描述其内容的国际标准语言；
 但是需要写DOCTYPE来规范浏览器的行为；
+
+（3）行内元素有哪些？块级元素有哪些？空（void）元素有哪些？
+行内元素：span，a，img，image，em,strong,lable,textarea,select...
+块级元素：p，div，dl,dt,dd,ul,li,ol,h1-h6,table,from...
+空元素:hr,br...
+
+（4）页面导入样式时，使用link和@import有什么区别？
+link会在页面加载之前加载文档样式。@import会在文档加载完之后再去加载样式。
+
+（5）介绍一下你对浏览器内核的理解？
+可以说浏览器醉重要最核心的就是浏览器的渲染引擎，也就是浏览器的内核。负责对页面的语法解析和页面的渲染。浏览器渲染引擎决定了渲染页面的内容和页面的格式信息。
+不同的浏览器对页面的解析和渲染方式是不同的。这就是为什么开发者需要在不同浏览器进行测试的原因。
+
+（6）常用的浏览器内核有哪些？
+大致可以分为几类内核：
+1、Trident（IE内核）2、Geoko（firefox内核）3、Webkit（Safari内核,chrome内核原型，在2013年，chrome公司就宣布和苹果公司的Webkit内核分道扬镳）
+4、Presto（前Opera内核，现在已近被废弃，Opera现在使用Blank内核） 5、Blank（chrome内核，与Opera一起发开）；
+
+（7）HTML5有哪些新特性、移除了哪些元素？如何处理HTML5新标签的浏览器兼容问题，如何区分HTML和HTML5?
+HTML5已形成了最终的标准，概括来讲，它主要是关于图像，位置，存储，多任务等功能的增加。
+新增的元素有绘画 canvas ，用于媒介回放的 video 和 audio 元素，本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失，
+而sessionStorage的数据在浏览器关闭后自动删除，此外，还新增了以下的几大类元素。
+内容元素，article、footer、header、nav、section。
+表单控件，calendar、date、time、email、url、search。
+控件元素，webworker, websockt, Geolocation。
+移出的元素有下列这些：
+显现层元素：basefont，big，center，font, s，strike，tt，u。
+性能较差元素：frame，frameset，noframes。
+
+如何处理HTML5新标签的浏览器兼容问题？如何区分HTML和HTML5？
+处理兼容问题有两种方式：
+1.IE8/IE7/IE6支持通过document.方法产生的标签，利用这一特性让这些浏览器支持HTML5新标签。
+2.使用是html5shim框架
+另外，DOCTYPE声明的方式是区分HTML和HTML5标志的一个重要因素，此外，还可以根据新增的结构、功能元素来加以区分。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
