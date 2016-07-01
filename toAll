@@ -1,0 +1,23 @@
+HTML 
+(1)Doctype的作用？严格模式与混合模式如何区分？它们有何意义？
+
+Doctype的是位于文档的最前面，在html标签前面，这个标签可以告诉浏览器遵循HTML或者是XHTML那种规范。
+DOD有三种规范：严格版本，过度版本，以及基于框架HTML的文档。
+作用一：告诉浏览器遵循那种HTML或者XHTML规范；
+作用二：告诉浏览器的渲染模式；
+
+区分：可以根据文档前面的设置；可以根据盒子模型的不同区分；
+    <!-- HTML 4.01 严格型 -->  
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"  "http://www.w3.org/TR/html4/strict.dtd">   
+      
+    <!-- XHTML 1.0 严格型 -->  
+    <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  
+    
+    <!-- HTML 4.01 过渡型 -->  
+    <!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.01 Transitional//EN"  "http://www.w3.org/TR/html4/loose.dtd">  
+    
+意义：几乎所有的浏览器都是支持严格模式和混合模式，严格模式服务于标准规则，而混合模式是服务于老式规则，是一种宽松的向后兼容模式。
+
+（2）HTML5为什么只需写<!DOCTYPE HTML>?
+因为HTML5是不遵循SGML官方的，SGML规范是一种标准通用标记语言（以下简称“通用标言”），是一种定义电子文档结构和描述其内容的国际标准语言；
+但是需要写DOCTYPE来规范浏览器的行为；
