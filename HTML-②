@@ -1,0 +1,11 @@
+（1）HTML5的form如何关闭自动完成功能？
+设置form的属性元素autocomplete=“off”就ok了。对于输入框也可以这样做。
+
+（2）页面可见性（Page Visibility）API可以有哪些用途？
+页面可见性API就是页面是可见还是不可见的。
+document.hidden=treu;设置当前页面的可见性；
+document.visibilityState;返回当前页面的可见状态；
+hidden,visible,prerender,preview
+
+
+
