@@ -1,0 +1,84 @@
+什么是DOM：？？？？
+DOM(document object model)是w3c(万维网联盟)的标准：是中立与平台和语言的接口，它允许程序和脚本动态的访问和更新文档的“内容”，“样式”，“结构”。
+W3C DOM分为三个部分：核心DOM，XML DOM，HTML DOM。
+
+什么是XML DOM：？？？？
+XML DOM 定义了所有XML元素的对象和属性，以及访问它们的方法。
+
+什么是HTML DOM：？？？？
+HTML DOM定义了所有的HTML元素的对象和属性，以及访问它们的方法。意思就是 HTML DOM 是关于如何获取，修改，添加，删除HTML的标准。
+
+HTML DOM 节点树：HTML DOM 将HTML文档作为树结构。这种结构称为节点树。通过HTML DOM ,树中的所有节点均可通过JavaScript进行访问。所有的HTML元素（节点）都可以被创建，修改和删除。
+节点父、子和同胞
+
+节点树中的节点彼此拥有层级关系。
+
+父（parent）、子（child）和同胞（sibling）等术语用于描述这些关系。父节点拥有子节点。同级的子节点被称为同胞（兄弟或姐妹）。
+
+    在节点树中，顶端节点被称为根（root）
+    每个节点都有父节点、除了根（它没有父节点）
+    一个节点可拥有任意数量的子节点
+    同胞是拥有相同父节点的节点
+
+
+
+常用方法：
+document.getElementById(id)-获取带有指定id的节点（元素）。
+document.appendChild(node)-插入新的子节点（元素）。
+document.removeChild(bode)-删除子节点（元素）。
+document.getElementsByTagName()-返回包含带有指定“标签名称”的所有元素的结点列表。
+（可以使用document.getElementById(id).getElementsByTagName(node)但是不能使用document.getElementsByTagName(node).getElementById(id)）
+
+document.getElementsByClassName()-返回包含带有指定“类名”的所有的结点列表。(getElementsByClassName在IE6,7,8中无效)
+
+document.replaceChild()-替换子节点。
+document.insertBefore()-在指定结点前面插入新的子节点。
+document.createAttribute()-创建属性节点。
+document.createElement()-创建元素节点。
+document.createTextNode()-创建文本节点。
+document.getAttribute()-返回指定的属性值。
+document.setAttribute()-把指定属性设置或修改为指定的值。
+
+
+常用HTML DOM属性：
+innerHTML-节点（元素）的文本值。
+parentNode-节点（元素）的父节点。
+childNodes-节点（元素）的子节点。
+attributes-节点（元素）的属性节点。
+
+nodeName属性：
+	：nodeName是只读的
+	：元素节点的nodeName与属性名相同.
+	：文本节点的nodeName始终是#text
+	: 文档节点nodeName使用时#document
+nodeValue属性：
+	:元素节点的nodeValue是undefined或者null
+	：文本节点的nodeVlaue是文本本身
+	：属性节点的nodeValue是属性值
+nodeType属性：
+	：属性返回节点类型。nodeType是只读的。
+	：1---元素
+	：2---属性
+	：3---文本
+	：8---注释
+	：9---文档
+	
+
+创建HTML内容：document.getElementById(id).innerHTML="text";
+改变HTML内容：docuemnt.getElementById(id).innerHTML="text";
+
+改变HTML样式：document.getElementById(id).style.属性=值；
+
+创建新的HTML元素：(首先必须创建该元素，在添加到已有的元素，操作在父节点)insertBefore(添加节点，父节点);appendChild();
+		var para = document.createElement("p");
+		var node =document.createTextNode("This is new");
+		para.appendChild(node);
+		var element =document.getElementById(父节点id);
+		element.appendChild(para);	
+删除节点：删除节点，在是父节点删除；removeChild(节点)，不能直接删除节点，也可以使用node.parentNode.removeChild(child);
+
+
+替换节点：replaceChild(para,child);
+
+
+		
