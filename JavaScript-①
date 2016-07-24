@@ -39,7 +39,94 @@
   }
   var person1 = new Person();
   优点：实例共享属性和方法。
-  缺点：实例不能修改原型的属性。
+  缺点：不能为构造函数传递参数，实例不能修改原型的属性。最严重的问题是共享机制导致的，在原型中使用了引用类型，问题就比较严重。
+  
+  6、组合使用构造函数模式和原型模式：构造函数定义实例属性，原型定义公共属性和方法。（最好的）
+  
+  7、动态原型模式。
+  function Person(name,age,job){
+    this.name=name;
+    this.gae=age;
+    this.job=job;
+    //方法
+    if(typeof this.sayName !="function"){
+      Person.prototype.sayName = function(){
+        alert(this.name);
+      }
+    }
+  }
+  
+  8、寄生构造函数模式。
+  function Person(name,age,job){
+    var o =new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayName=function(){
+      alert(this.name);
+    };
+    return o;
+  }
+  var person =new Person("zhang",20,"IT");
+  
+  9、稳妥构造函数模式（道格拉斯发明了JavaScript中的稳妥对象：指没有公共属性而且其方法也不引用this的对象）
+  稳妥构造函数模式和寄生动态模式有两点不同：一、是新创建的对象不使用this，二、是不使用new操作符调用构造函数。
+  这种模式适合在一些安全的环境中，或者防止数据被其他数据改动时使用。
+  function Person(name,age,job){
+    var o =new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayName=function(){
+      alert(name);
+    };
+    return o;
+  }
+  var person = Person("zhang",20,"IT");
+  
+  
+  二、对象的继承
+  
+  1、原型链继承：让一个对象的原型等于另一个对象的实例。
+  问题：引用类型值的原型属性会被所有实例共享。
+  
+  2、借用构造函数继承（伪造对象或者经典继承）：在子类型的构造函数中调用超类的构造函数。
+  function SuperType(){
+    this.color=["red","yellow","green"];
+  }
+  function SubType(){
+    SuperType.call(this);//实现继承
+  }
+  优点：这种继承方法，解决了“引用类型值得原型属性会被所有实例共享”的问题，并且子类型的构造函数可以向超类型的构造函数传递参数。
+  问题：复用性能差。
+  
+  3、组合模式（伪经典模式）：原型链模式和借用构造器模式一起使用。通过原型链模式实现对原型属性和方法的继承。通过借用构造器模式
+  实现对实例属性的继承。
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
