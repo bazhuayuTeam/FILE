@@ -1,0 +1,47 @@
+一、创建对象的方法
+  1、Object构造函数。缺点：使用同一个接口创建很多对象，会产生大量的重复代码。
+  2、对象字面量。缺点：使用同一个接口创建很多对象，会产生大量的重复代码。
+  3、工厂模式。
+  functuon createPerson（name,age,job）{
+    var o = new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayNmae=function(){
+      alert(this.name);
+    };
+    return o;
+  }
+  
+  var object  = createPerson("zhangsan",20,"IT"); 缺点：不能识别对象的类型。
+  4、构造函数模式
+   functuon Person（name,age,job）{
+    this.name=name;
+    this.age=age;
+    this.job=job;
+    this.sayNmae=function(){
+      alert(this.name);
+    };
+  }
+  
+  var object  = new Person("zhangsan",20,"IT"); 
+  不同于工厂方法：没有显示的创造对象，显示的把属性赋给this，没有返回（没有return）。
+  优点：将来可以将它的实例表示为一种特定的类型。
+  缺点：每个方法都要在每个实例上面重新创造一遍。
+  5、原型对象：每个函数都有一个prototype属性，和这个属性是一个指针，指向一个对象。这个对象的用途是包含了特定类型实例
+  共享的属性和方法。
+  function Person(){}
+  Person.prototype.name="zhangsan";
+  Person.prototype.age=20;
+  Person.prototype.job="IT";
+  Person.prototype.sayName=function(){
+    alert(this.name);
+  }
+  var person1 = new Person();
+  优点：实例共享属性和方法。
+  缺点：实例不能修改原型的属性。
+  
+  
+  
+  
+  
