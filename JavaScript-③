@@ -5,6 +5,7 @@
 数组的深拷贝：
 1、JavaScript的slice()方法。
 2、JavaScript的concat()方法。
+3、循环复制。
 
 对象的深拷贝：
 1、对象的深拷贝就是把对象的所有属性全部遍历一遍，复制给新对象。
@@ -38,3 +39,145 @@ Dom是W3c的标准，是定义HTML和XML的标准。W3C的文档对象模型是�
 
 2、HTML DOM结点。
 在HTML中所有的事务都是结点，DOM被视为是节点树的HTML。
+
+注意在IE中所有的DOM对象都是以COM对象形式出现的，这意味着IE中的DOM对象和JavaScript对象的行为特点不是一致的。
+
+（1）Node类型
+Node.ELEMENT_NODE        (1)
+Node.ATTRIBUTE_NODE      (2)
+Node.TEXT_NODE           (3)
+Node.CDATA_SECATION_NODE (4)
+Node_ENTITY_REFERENCE_NODE(5)
+Node_ENTITY_NODE         (6)
+Node_POROCESSING_INSTRUCTION_NODE (7)
+Node_COMMENT_NODE        (8)
+Node_DOCUMENT_NODE       (9)
+Node_DOCUMENT_TYPE_NODE  (10)
+Node_DOCUMENT_FRAGMENT_NODE (11)
+Node_NOTATION_NODE       (12)
+注意在IE中没有公布node的构造函数，所有在IE中不能使用上诉的12中类型，但是可以使用数字。
+
+节点关系：
+nodeChildes     parentNode    perivousSibling       lastSibling
+firstNode       lastNode      hasNodeChildes()      owerDocument
+
+操作结点：
+appendChild():用于向childNodes列表末尾添加一个结点；
+var node = document.createElement("div");
+var text = document.createTextNode("this is div");
+node.appendChild(node);
+var element =  document.getElementById("div");
+element.appendChild(node);
+
+insertBefore(newNode , oldNode);
+
+replaceChild(newNode , oldNode);
+
+removeChild(node);注意被替换和删除的结点依然还在文档当中，只是在文档中没有这些结点的位置。
+
+cloneNode();
+
+normalize();这个方法是清楚没有文本的结点和重复结点。
+
+
+
+（2）Document类型：是HTMLDocument的实例，在所有浏览都可以访问当HTMLDocument的构造函数。但是在IE总不可以访问document类型的
+构造函数。
+nodeType的值为9  nodeName的值为"#document"   nodeValue的值为null
+parentNode的值为null       owerDocument的值为null
+
+文档的子节点：
+var html = document.documentElement; 对文档的<html>的引用
+var body = document.body;            对文档的<body>的引用
+var doctype = document.doctype;      对文档的<!DOCTYPE>的引用
+var title = document.title;          可以设置获取文档的标题
+var URL = document.URL;              对文档的URL的获取；
+var domain = document.domain;        对文档的域名获取和设置；当域名开始是松散的，那么久不能将他设置为紧绷的。
+var referrer = document.refferrer;   取得来源页面的URL;
+
+查找元素：
+document.getElementById(ID);在IE8及较低的版本都是不区分ID的大小写的。在IE7及较低的版本中调用document.getElementById(ID),
+表单的name和ID相同也会被返回。
+document.getElementsByTagName(TAG);返回值可以使用三个方法访问[] item() namedItem(name属性)
+docuemnt.getElementsByTagName("*");返回文档的全部元素
+document.getElementsByName();HTMLDcoument提供
+document.anchors; 返回文档的<a>
+document.applets;
+document.forms;
+document.images;
+document.links;
+document.implementation.hasFeatrue(名称，版本);
+write() writeln() open() close()
+
+（3） ELemnt(元素)类型
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
