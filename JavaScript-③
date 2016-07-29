@@ -1,0 +1,40 @@
+一、JavaScript的深拷贝和浅拷贝。
+有时候我们在使用数组或者对象进行操作的时候，需要将数组或者对象进行备份，但是，有时候当我们简单的将一个数组或者对象复制给其他变量，
+那么我们只要改变其中一个，另外一个也会随之改变，这样的复制拷贝，叫做浅拷贝。
+
+数组的深拷贝：
+1、JavaScript的slice()方法。
+2、JavaScript的concat()方法。
+
+对象的深拷贝：
+1、对象的深拷贝就是把对象的所有属性全部遍历一遍，复制给新对象。
+
+数值和对象深拷贝的公共方法：
+function clone(obj){
+  var buf;
+  if(obj instanceof Array){
+    buf=[];
+    buf = obj.concat();//buf = obj.slice(0);
+    return buf;
+  }
+  else if(obj instanceof Object){
+    var buf={};
+    for(var ob in obj){
+      buf[ob]=obj[ob];
+    }
+    return buf;
+  }
+  else{
+    return obj;
+  }
+}
+
+二、Dom学习
+
+1、什么是Dom？
+Dom是W3c的标准，是定义HTML和XML的标准。W3C的文档对象模型是中立与语言和平台的接口，他允许程序和脚本
+动态的访问和改变文档的内容样式和结构。分为三部分：核心DOM，HTML DOM , XML DOM.
+
+
+2、HTML DOM结点。
+在HTML中所有的事务都是结点，DOM被视为是节点树的HTML。
