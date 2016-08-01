@@ -63,7 +63,42 @@ ID选择器和类选择器的区别：# . ,ID选择器不能引用class的属性
     颜色：命名颜色：css2.1中17种（HTML4.01中定义的16种加上一个橙色）在css3中包含了140种颜色名；
           函数式RGB指定颜色
           16进制RGB指定颜色
-          web安全颜色：所谓的web安全颜色是指
+          web安全颜色：所谓的web安全颜色是指在256色计算机上总能避免颤抖的颜色。web安全颜色可以表示为RGB值为%20和51的倍数，
+          另外0%和0也是一个安全色。
+    长度单位：
+                绝对长度单位：in  cm  mm  pt(点)  pc(派卡) 一英寸是72点，一派卡是12点
+                相对长度单位：em(em-height) ex(x-height) pt
+                注意：em定义为一种给定字体的大小。在很多的用户代理中取其em的一半作为ex的长度，1ex=0.5em。
+                一些浏览器会内置一个小写的x并计算相应的像素来确定高度与字符-font-size值之比，来确定给定字体x的高度。
+                
+                ppi：像素密度。
+                
+四、字体
+    字体系列：font-family:字体名称 inhert
+                有继承 
+                初始值：用户代理指定
+    字体加粗：font-width:normal bold  bolder lighter 100-900 inhert 400=normal  700=bold 
+                有继承  
+                初始值：normal
+    字体大小：font-size:xx-small x-small small medium large x-large xx-large smaller larger length % inhert
+                有继承
+                初始值:medium
+                注意：在不同的css版本中一个绝对大小与下一个绝对大小之间的差别是不一样的。
+                相对大小：smaller larger（一般缩放因子1.2）
+                绝对大小：xx-small x-small small medium large x-large xx-large
+    字体风格：font-style:normal italic oblique inhert
+                有继承
+                初始值：normal
+    字体变形：font-variant:small-caps(小型大写字母) normal inhert
+                有继承
+                初始值:normal
+    
+                
+                
+    
+                
+                
+            
 
 
                        
