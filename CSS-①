@@ -92,7 +92,54 @@ ID选择器和类选择器的区别：# . ,ID选择器不能引用class的属性
     字体变形：font-variant:small-caps(小型大写字母) normal inhert
                 有继承
                 初始值:normal
+    字体拉伸：font-stretch:(css2.1被淘汰)
+    注：x-height除以font-size的结果称为方面值，方面值越高，随着字体大小的减小这种字体往往还能辨识。反之不行。
+    字体辨识：font-size-adjust
     
+    
+    font属性：style variant weight size/line-height family
+              有继承
+              初始值：根据的单个属性
+              
+五、文本属性
+    文本缩进：text-index：length（可以为负值） % inhert
+            有继承
+            初始值：0
+            注意：这个属性可以为所有的块级元素使用，但是无法为行内元素使用。图片之类的替换元素也无法使用，但是如果是段落的
+            首行有一个图片，他会随着其余文本移动。
+            如果想把行内元素的第一行缩进，可以使用内边距或者外边距。
+    水平对齐：text-align：left right justify center inhert 
+            有继承
+            初始值：用户代理特定的值
+            注意：有的人认为text-align可能和html元素<center>是一样的，其实有很大的差别，<center>不仅影响文本，还会影响整个元素居中。
+            IE6之前就是把text-align和<center>当做是一样的。
+    行高：line-heigth：number（设置数字，line-heigth是当前数字与font-szie相乘） length % normal 没有设置的话，哪line-height是font-size 的1.2倍
+        有继承
+        初始值：normal
+    垂直文本对齐：vertical-align：baseline sub super top text-top middle buttom text-bottom % length inhert
+                无继承
+                初始值：basline
+                注意：vertical-align不影响块级元素的内容对齐。
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
     
