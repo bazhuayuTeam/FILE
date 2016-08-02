@@ -1,0 +1,229 @@
+一、创建对象的方法
+  1、Object构造函数。缺点：使用同一个接口创建很多对象，会产生大量的重复代码。
+  2、对象字面量。缺点：使用同一个接口创建很多对象，会产生大量的重复代码。
+  3、工厂模式。
+  functuon createPerson（name,age,job）{
+    var o = new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayNmae=function(){
+      alert(this.name);
+    };
+    return o;
+  }
+  
+  var object  = createPerson("zhangsan",20,"IT"); 缺点：不能识别对象的类型。
+  4、构造函数模式
+   functuon Person（name,age,job）{
+    this.name=name;
+    this.age=age;
+    this.job=job;
+    this.sayNmae=function(){
+      alert(this.name);
+    };
+  }
+  
+  var object  = new Person("zhangsan",20,"IT"); 
+  不同于工厂方法：没有显示的创造对象，显示的把属性赋给this，没有返回（没有return）。
+  优点：将来可以将它的实例表示为一种特定的类型。
+  缺点：每个方法都要在每个实例上面重新创造一遍。
+  5、原型对象：每个函数都有一个prototype属性，和这个属性是一个指针，指向一个对象。这个对象的用途是包含了特定类型实例
+  共享的属性和方法。
+  function Person(){}
+  Person.prototype.name="zhangsan";
+  Person.prototype.age=20;
+  Person.prototype.job="IT";
+  Person.prototype.sayName=function(){
+    alert(this.name);
+  }
+  var person1 = new Person();
+  优点：实例共享属性和方法。
+  缺点：不能为构造函数传递参数，实例不能修改原型的属性。最严重的问题是共享机制导致的，在原型中使用了引用类型，问题就比较严重。
+  
+  6、组合使用构造函数模式和原型模式：构造函数定义实例属性，原型定义公共属性和方法。（最好的）
+  
+  7、动态原型模式。
+  function Person(name,age,job){
+    this.name=name;
+    this.gae=age;
+    this.job=job;
+    //方法
+    if(typeof this.sayName !="function"){
+      Person.prototype.sayName = function(){
+        alert(this.name);
+      }
+    }
+  }
+  
+  8、寄生构造函数模式。
+  function Person(name,age,job){
+    var o =new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayName=function(){
+      alert(this.name);
+    };
+    return o;
+  }
+  var person =new Person("zhang",20,"IT");
+  
+  9、稳妥构造函数模式（道格拉斯发明了JavaScript中的稳妥对象：指没有公共属性而且其方法也不引用this的对象）
+  稳妥构造函数模式和寄生构造函数模式有两点不同：一、是新创建的对象不使用this，二、是不使用new操作符调用构造函数。
+  这种模式适合在一些安全的环境中，或者防止数据被其他数据改动时使用。
+  function Person(name,age,job){
+    var o =new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayName=function(){
+      alert(name);
+    };
+    return o;
+  }
+  var person = Person("zhang",20,"IT");
+  
+  
+  二、对象的继承
+  
+  1、原型链继承：让一个对象的原型等于另一个对象的实例。
+  问题：引用类型值的原型属性会被所有实例共享。
+  
+  2、借用构造函数继承（伪造对象或者经典继承）：在子类型的构造函数中调用超类的构造函数。
+  function SuperType(){
+    this.color=["red","yellow","green"];
+  }
+  function SubType(){
+    SuperType.call(this);//实现继承
+  }
+  优点：这种继承方法，解决了“引用类型值得原型属性会被所有实例共享”的问题，并且子类型的构造函数可以向超类型的构造函数传递参数。
+  问题：复用性能差。
+  
+  3、组合模式（伪经典模式）：原型链模式和借用构造器模式一起使用。通过原型链模式实现对原型属性和方法的继承。通过借用构造器模式
+  实现对实例属性的继承。
+  function SuperType(name){
+    this.name=name;
+    this.colors=["red","yellow","green"];
+  }
+  SuperType.prototype.syaName = function(){
+    alert(this.name);
+  };
+  function SubType(name,age){
+    //继承属性
+    SuperType.call(SupType,name);//第二次调用SuperType()
+    this.age=age
+  }
+  //继承方法
+  SubType.prototype = new SuperType();//第一次调用SuperType()
+  SubType.prototype.constructor = SubType;
+  问题：无论什么情况下都会调用两次超类型的构造函数。
+  
+  4、原型式继承；借助已有的对象创建新对象。要求有一个对象必须作为其他对象的基础。
+  function object(o){
+    function F(){}
+    F.prototype = o;
+    return new F;
+  }
+  
+  var person = {
+    name:"zhang",
+    friends:["sh","zh","he"]
+  };
+  //实现继承
+  var ob = object(person);
+  
+  在ES5中新增了一个Object.create();规范化了原形式继承。接收两个参数，第一个是作为新对象的原型的对象，第二个是可选的，
+  作为新对象额外属性的对象(其实就是属性的描述)。
+  
+   var person = {
+    name:"zhang",
+    friends:["sh","zh","he"],
+  };
+  var o = Object.create(person,{
+    name:{
+      value:"Ge",
+      writeable:false,
+      configurable:false,
+      enumerable:false
+    }
+  });
+  
+  问题：包含引用类型值得属性始终都会共享相应的值。
+  
+  5、寄生式继承：思路与寄生构造函数和工程方法模式类似，创建一个仅用于封装的过程的函数，该函数在内部以
+  某种方式增强对象，最后在返回对象。
+  
+  function createAnother(original){
+    var clone = object(original);
+    clone.name="zhang";
+    clone.sayHi = function(){
+      alert(this.name);
+    };
+  }
+  function object(o){
+    function F(){}
+    F.prototype = o;
+    return new F;
+  }
+  
+  var person = {
+    name:"zhang",
+    friends:["sh","zh","he"]
+  };
+  var o = createAnother(person); 
+  问题：由于不能得到函数复用效率降低。
+  
+  6、寄生组合式继承：即通过借用构造函数累继承属性，使用原型式的混成形式来继承方法，
+  本质就是：使用寄生式继承来继承超类型的原型，然后再将结果指定给子类型的原型。
+  function inheritPrototype(SubType,SuperType){
+    var prototype = Object(SuperType.prototype);//创建对象
+    prototype.constructor = SubType;//增强对象
+    SubType.prototype = prototype;//指定对象
+    return SubType; 
+  }
+  function SuperType(name){
+    this.name=name;
+    this.colors=["red","blue","green"];
+  }
+  SuperType.prototype.sayName = function(){
+    alert(this.name);
+  };
+  function SubType(name,age){
+    SuperType.call(this,name);
+    this.age=age;
+  }
+  inheritPrototype(SubType,SuperType);
+  SubType.prototype.sayAge = function(){
+    alert(this.age);
+  };
+ var ob = new SubType("zhang",20);
+console.log(ob);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
