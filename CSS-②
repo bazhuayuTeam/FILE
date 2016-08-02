@@ -11,3 +11,14 @@
 
 块级框的水平属性：7个 左外边距-右外边距（7个之和等于父元素的width） 有三个可以设置auto width（css允许浏览器为width设置一个最小值） margin-left margin-right
 如果当margin-left、margin-left和width都设置为auto，margin-left、margin-left为0
+
+替换元素的规则同样适合非替换元素，但是有一个不同，如果width为auto，元素的宽度这是内容的固有宽度。 
+
+二、内边距，外边距，边框
+
+注意：如果采用手工定位，框可能会重复，另外如果在正常流元素上使用负的外边距，也可能出现视觉重叠。
+
+注意：width 和 height 不能运用到行内非替换元素上面。
+宽度：width：length % inhert auto
+无继承
+初始值：auto
