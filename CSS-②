@@ -76,7 +76,9 @@
                 无继承
                 初始值：none
                 注意：行内 块级元素都能设置背景图片。
-        
+        重复背景：background-repeat：none repeat repeat-x repeat-y no-repeat inhert
+                无继承
+                初始值：repeat；
                 
         
         
