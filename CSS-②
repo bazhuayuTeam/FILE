@@ -36,6 +36,55 @@
 边框样式：border-style：none hidden dotted dashed solid double groove ridge inset outset
         无继承
         初始值：无定义。
+        多种样式：border-style：solid dashed dotted double；
+        单边样式：border-top-style border-right-style border-bottom-style border-left-style
+边框宽度：border-width：thin medium thick  length inhert
+        无继承
+        初始值：medium
+        多边宽度：border-width：1px 1px 1px 1px；
+        单边边宽度：border-top（right bottom left）-width 。。。
+边框颜色：border-color：transparent color inhert
+        无继承
+        初始值：无定义
+        多边颜色：border-color： red red red red；
+        单边颜色：border-top（right bottom left）-color;
+        
+边框：border：style width color inhret
+        简写属性：border-top（right bottom left）
+
+内边距：padding：length % inhert
+        无继承
+        初始值：未定义   
+        注意：当设置内边距为%的时候是相对父元素的width，上下左右都是一样的，都是相对父元素的width。在设置外边距的时候是一样的。
+        单外边距：paddig-top(right botton left)
+        有些浏览器会忽略表单元素的内边距。
+        
+
+三、颜色和背景（所有的背景属性都是不能继承的）
+        前景色：color：color inhert
+                有继承
+                初始值：用户代理指定的值。
+                注意：默认的前景色会运用到边框。
+        背景色：background-color：color transparent inhert
+                无继承
+                初始值：transparent
+        
+        注意：在navigator4对背景色的处理是完全错误的，背景色只运用到文本下。为解决这种问题，必须在元素上设置一个边框
+        然后将其颜色设置和背景色一样。
+        
+        背景图片：background-image：url（。。。） inhert none
+                无继承
+                初始值：none
+                注意：行内 块级元素都能设置背景图片。
+        
+                
+        
+        
+        
+
+        
+        
+        
 
 
 
