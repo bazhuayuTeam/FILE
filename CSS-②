@@ -79,6 +79,28 @@
         重复背景：background-repeat：none repeat repeat-x repeat-y no-repeat inhert
                 无继承
                 初始值：repeat；
+                注意：只要有背景图片就应该同时包含一个背景颜色。
+        背景位置：background-position：
+                                    top left
+                                    top center
+                                    top right
+                                    center left
+                                    center center
+                                    center right
+                                    bottom left
+                                    bottom center
+                                    bottom right
+                无继承
+                初始值：0% 0%
+                注意：如果只指定了第一个方向值，那么第二值就是center，如果只指定了第一个%，那么第二值就是50%；
+                放置图片的上下文视元素的内边框边界。
+        背景关联：background-attachment：scroll fixed inhert
+                无继承
+                初始值：scroll
+                
+        背景：background：color image repeat attachment position
+                
+
                 
         
         
