@@ -21,7 +21,8 @@
     清除浮动：1、元素本身使用clear：both；
               2、在元素前后设置空元素，并设置元素的clear；
               3、通过设置css的overflow：auto或者hidden设置一个隐藏元素（注意必须设置width，zoom，但是不能设置height）
-              4、通过设置：after
+              4、通过设置：after伪元素在设置空元素。
+              5、给浮动元素后面的元素设置clear
               
     知识积累：haslayout 是Windows Internet Explorer渲染引擎的一个内部组成部分。在InternetExplorer中，一个元素要么自己对自身的内容
     进行计算大小和组织，要么依赖于父元素来计算尺寸和组织内容。为了调节这两个不同的概念，渲染引擎采用了 hasLayout 的属性，属性值可
@@ -31,5 +32,31 @@
     那么元素得依靠某个祖先元素来渲染它。这就是很多的ie bugs诞生的地方。
     
     
+    定位：position：static relative absolute fixed inhert
+        无继承
+        初始值：static
+    包含块：对于浮动元素包含块就是最近的祖先元素，但是对于浮动元素来说就不是那么简单了。
+          1、“根元素”，是由用户代理建立，在HTML中根元素是HTML元素，不过在有的浏览器是使用body作为根元素。
+          2、对于一个非“根元素” 如果position值是relative或static，包含框就是最近的块级框、表格元素，或者行内祖先框。
+          3、对于一个非“根元素” 如果position值是absolute，包换块是最近的position不是static 的祖先元素
+    偏移属性：top right left bottom
+    限制高度和宽度：min-width min-height：初始值：0
+                    max-width max-height：初始值：none
+                    
+    内容溢出： overflow：scroll hidden auto visible inhert
+              无继承
+              初始值：visible
+    内容裁剪：clip：rect（top，right，bottom，left）（不是偏移量，是距离左上角的距离） auto inhert
+              无继承
+              初始值：auto
+              
+    元素可见性：visibility：visible hidden collapse(当在表格中使用的时候，尅删除一行一列，但是对布局美哦与影响) inhert
+              有继承
+              初始值：visibile
+    
     包含块和绝对定位：原始绝对定位的时候，会从文档流中完全删除，然后相对其包含块定位。绝对定位可能覆盖其他元素，或者被其他元素覆盖。
+    
+    z-index：覆盖顺序，integer auto inhert
+          无继承
+          初始值：auto
     
