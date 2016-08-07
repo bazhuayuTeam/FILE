@@ -1,0 +1,129 @@
+一、基本视觉格式化
+元素框：css假定每个元素都会生成一个或多个矩形框，我们称之为元素框。
+内边距不能为负值，外边距可以。
+包含框：一个元素的布局上下文。
+正常流：文本从左往右，从上往下，显示。脱离正常流的方法：让元素成为浮动或者定位元素。
+替换元素：这里指作为其他内容的一个占位符。例如：img元素。大多数表单元素也可以替换。
+非替换元素：指元素的内容包含在文档中。
+块级元素：指段落或者div之类的元素，在正常流中会在框之前和之后生成换行，所以处于正常流中的元素会垂直。摆放。
+行内元素：指span之类的元素，在正常流中，在框之前后之后不能生成换行符。
+
+
+块级框的水平属性：7个 左外边距-右外边距（7个之和等于父元素的width） 有三个可以设置auto width（css允许浏览器为width设置一个最小值） margin-left margin-right
+如果当margin-left、margin-left和width都设置为auto，margin-left、margin-left为0
+
+替换元素的规则同样适合非替换元素，但是有一个不同，如果width为auto，元素的宽度这是内容的固有宽度。 
+
+二、内边距，外边距，边框
+
+注意：如果采用手工定位，框可能会重复，另外如果在正常流元素上使用负的外边距，也可能出现视觉重叠。
+
+注意：width 和 height 不能运用到行内非替换元素上面。
+宽度：width：length % inhert auto
+无继承
+初始值：auto
+
+外边距合并：即当两个或更多垂直外边距相遇时，它们将形成一个外边距（高度为较大者）。情况有如下几种：
+①两个同级上下元素 ②祖先元素与内嵌元素（没有内边距或边框隔开,就祖先元素overflow:hidden/auto/scroll可有隔开的作用，避免叠加） 
+③本身是空元素时,自身上下外边距也会重合（没有边框或内边距隔开） ，当然前面几种情况可以结合发生。
+只有普通文档流中，块框的垂直外边距才回发生叠加。行内框、浮动框或绝对（个人认为包括绝对定位和固定定位）定位框之间的外边距不会发生叠加。
+
+
+注意：对于只包含文本的行，能改变行间距的属性只有line-height font-size 和vertical-align
+
+注意：CSS2规定背景颜色值延伸到内边距，在CSS2.1中规定背景颜色延伸到边框区。
+
+边框样式：border-style：none hidden dotted dashed solid double groove ridge inset outset
+        无继承
+        初始值：无定义。
+        多种样式：border-style：solid dashed dotted double；
+        单边样式：border-top-style border-right-style border-bottom-style border-left-style
+边框宽度：border-width：thin medium thick  length inhert
+        无继承
+        初始值：medium
+        多边宽度：border-width：1px 1px 1px 1px；
+        单边边宽度：border-top（right bottom left）-width 。。。
+边框颜色：border-color：transparent color inhert
+        无继承
+        初始值：无定义
+        多边颜色：border-color： red red red red；
+        单边颜色：border-top（right bottom left）-color;
+        
+边框：border：style width color inhret
+        简写属性：border-top（right bottom left）
+
+内边距：padding：length % inhert
+        无继承
+        初始值：未定义   
+        注意：当设置内边距为%的时候是相对父元素的width，上下左右都是一样的，都是相对父元素的width。在设置外边距的时候是一样的。
+        单外边距：paddig-top(right botton left)
+        有些浏览器会忽略表单元素的内边距。
+        
+
+三、颜色和背景（所有的背景属性都是不能继承的）
+        前景色：color：color inhert
+                有继承
+                初始值：用户代理指定的值。
+                注意：默认的前景色会运用到边框。
+        背景色：background-color：color transparent inhert
+                无继承
+                初始值：transparent
+        
+        注意：在navigator4对背景色的处理是完全错误的，背景色只运用到文本下。为解决这种问题，必须在元素上设置一个边框
+        然后将其颜色设置和背景色一样。
+        
+        背景图片：background-image：url（。。。） inhert none
+                无继承
+                初始值：none
+                注意：行内 块级元素都能设置背景图片。
+        重复背景：background-repeat：none repeat repeat-x repeat-y no-repeat inhert
+                无继承
+                初始值：repeat；
+                注意：只要有背景图片就应该同时包含一个背景颜色。
+        背景位置：background-position：
+                                    top left
+                                    top center
+                                    top right
+                                    center left
+                                    center center
+                                    center right
+                                    bottom left
+                                    bottom center
+                                    bottom right
+                无继承
+                初始值：0% 0%
+                注意：如果只指定了第一个方向值，那么第二值就是center，如果只指定了第一个%，那么第二值就是50%；
+                放置图片的上下文视元素的内边框边界。
+        背景关联：background-attachment：scroll fixed inhert
+                无继承
+                初始值：scroll
+                
+        背景：background：color image repeat attachment position
+                
+
+                
+        
+        
+        
+
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

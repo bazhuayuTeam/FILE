@@ -1,0 +1,104 @@
+一、浮动和定位
+  浮动：float：left right none inhert
+    无继承
+    初始值：none
+    注意：浮动元素的外边距不会与其他元素的外边距合并。要浮动一个非替换元素，那么，一定要为元素设置width。
+    浮动元素的包含块是器最近的块级祖先元素，浮动元素会生成一个块级框，无论元素本身是什么。
+    
+    规则：1、浮动元素不能超过包含块的左 右内边界。
+          2、浮动元素的左（右）外边界必须是源文档中之前出现的左（右）浮动元素的右（左）外边界。除非是上下关系，这样可以防止浮动元素
+          的覆盖。
+          3、左浮动元素的右外边界，不能在右浮动元素的左外边界的右边。这个规则是防止元素重叠。
+          4、浮动元素的顶端不能比父级元素的顶端更高。
+          5、浮动元素的顶端不能比之前浮动元素或者块级元素的顶端更高。
+          6、如果源文件中的一个浮动元素之前出现另一个元素，浮动元素的顶端不能比包含改元素所生产的任何行框的顶端都要搞。
+          7、浮动元素不能超过包含块的边界。
+          8、浮动元素要尽可能高的放置。
+          9、左浮动元素要必须向右尽可能远，右浮动也是一样。
+    
+    注意：1、行内框和一个浮动元素重叠的时候，其边框，背景，和内容都会在浮动元素之上显示
+          2、块框与一个浮动元素发生重叠的时候，器边框，背景在浮动元素之下，内容在浮动元素之上。
+    清除浮动：1、元素本身使用clear：both；
+              2、在元素前后设置空元素，并设置元素的clear；
+              3、通过设置css的overflow：auto或者hidden设置一个隐藏元素（注意必须设置width，zoom，但是不能设置height）
+              4、通过设置：after伪元素在设置空元素。
+              5、给浮动元素后面的元素设置clear
+              
+    知识积累：haslayout 是Windows Internet Explorer渲染引擎的一个内部组成部分。在InternetExplorer中，一个元素要么自己对自身的内容
+    进行计算大小和组织，要么依赖于父元素来计算尺寸和组织内容。为了调节这两个不同的概念，渲染引擎采用了 hasLayout 的属性，属性值可
+    以为true或false。当一个元素的 hasLayout属性值为true时，我们说这个元素有一个布局（layout）要想更好的理解 css， 尤其是 IE 下对 
+    css 的渲染，haslayout 是一个非常有必要彻底弄清楚的概念。大多IE下的显示错误，就是源于 haslayout。如果它设置成了true，它就不得
+    不去渲染它自己，因此元素不得不扩展去包含它的流出的内容。例如浮动或者很长很长的没有截断的单词，如果haslayout没有被设置成true，
+    那么元素得依靠某个祖先元素来渲染它。这就是很多的ie bugs诞生的地方。
+    
+    
+    定位：position：static relative absolute fixed inhert
+        无继承
+        初始值：static
+    包含块：对于浮动元素包含块就是最近的祖先元素，但是对于浮动元素来说就不是那么简单了。
+          1、“根元素”，是由用户代理建立，在HTML中根元素是HTML元素，不过在有的浏览器是使用body作为根元素。
+          2、对于一个非“根元素” 如果position值是relative或static，包含框就是最近的块级框、表格元素，或者行内祖先框。
+          3、对于一个非“根元素” 如果position值是absolute，包换块是最近的position不是static 的祖先元素
+    偏移属性：top right left bottom
+    限制高度和宽度：min-width min-height：初始值：0
+                    max-width max-height：初始值：none
+                    
+    内容溢出： overflow：scroll hidden auto visible inhert
+              无继承
+              初始值：visible
+    内容裁剪：clip：rect（top，right，bottom，left）（不是偏移量，是距离左上角的距离） auto inhert
+              无继承
+              初始值：auto
+              
+    元素可见性：visibility：visible hidden collapse(当在表格中使用的时候，尅删除一行一列，但是对布局美哦与影响) inhert
+              有继承
+              初始值：visibile
+    
+    包含块和绝对定位：原始绝对定位的时候，会从文档流中完全删除，然后相对其包含块定位。绝对定位可能覆盖其他元素，或者被其他元素覆盖。
+    
+    z-index：覆盖顺序，integer auto inhert
+          无继承
+          初始值：auto
+    
+   二、表布局
+        CSS对于表元素和内部表元素有很明确的分界。在css中，内部表元素生成矩形框，有内容，内边距和边框，但没有外边距。
+        table：定义一个块级表。
+        display： none 	此元素不会被显示。
+                  block 	此元素将显示为块级元素，此元素前后会带有换行符。
+                  inline 	默认。此元素会被显示为内联元素，元素前后没有换行符。
+                  inline-block 	行内块元素。（CSS2.1 新增的值）
+                  list-item 	此元素会作为列表显示。
+                  run-in 	此元素会根据上下文作为块级元素或内联元素显示。
+                  compact 	CSS 中有值 compact，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。
+                  marker 	CSS 中有值 marker，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。
+                  table 	此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。
+                  inline-table 	此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。
+                  table-row-group 	此元素会作为一个或多个行的分组来显示（类似 <tbody>）。
+                  table-header-group 	此元素会作为一个或多个行的分组来显示（类似 <thead>）。
+                  table-footer-group 	此元素会作为一个或多个行的分组来显示（类似 <tfoot>）。
+                  table-row 	此元素会作为一个表格行显示（类似 <tr>）。
+                  table-column-group 	此元素会作为一个或多个列的分组来显示（类似 <colgroup>）。
+                  table-column 	此元素会作为一个单元格列显示（类似 <col>）
+                  table-cell 	此元素会作为一个表格单元格显示（类似 <td> 和 <th>）
+                  table-caption 	此元素会作为一个表格标题显示（类似 <caption>）
+                  inherit 	规定应该从父元素继承 display 属性的值。
+                  无继承
+                  初始值：inline。
+        表标题：caption-side：top bottom
+                有继承
+                初始值：top
+                注意：1、表标题能从表格继承值。
+                      2、用户代理在考虑如何处理表前面的run-in元素时会忽略表标题框。
+                      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
