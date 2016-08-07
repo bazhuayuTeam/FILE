@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="833f3c14-f91c-48a6-816b-9c6eb285000d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/30-模块化开发.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/31-了解nodejs.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/32-什么是mvvm.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/36-js模板引擎.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/37-js预加载&amp;延迟加载.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/38-cssHack技巧.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/39-angularjs的mvc.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/40-js的链式调用.doc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/file/工作周报模板.doc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="file.iws" />
@@ -69,7 +62,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -122,6 +114,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -270,7 +263,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469193912509</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="all">
+      <created>1470098920002</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1470098920002</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
