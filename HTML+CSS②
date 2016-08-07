@@ -1,0 +1,31 @@
+1、css hask
+  什么是css hack ？
+    css hack是由于不同的浏览器厂商对css 的解析认识不一样，导致的生成的页面效果是不一样的，得不到我们想要的结果，
+    这时我们需要更具不同浏览器兼容不同的CSS样式，能在页面上得到我们想要的结果。简单点说css hack的目的就是为了兼容
+    不同浏览器的css样式。
+  CSS Hack分类？
+  css hack大概可以分为三类：css属性前缀法、选择器前缀法、IE条件注释
+      css属性前缀法：（类内部hack）例如IE6能是识别"_" "*"，IE7能是识别"*"，但是不能识别"_",IE6-IE10都能识别"\9"
+      但是对于ff对这三种都是不能识别的。
+      选择器前缀法：（选择器hack）例如IE6能识别*html.class{},IE7能识别*+html+class{}或者是*first-child+html.class{}
+      IE条件注解法：（HTML条件注解HACK）针对所有的IE
+      
+      （1）IE条件注解法：这种方式只有IE特有。
+            只在IE下生效
+          	<!--[if IE]>
+          	这段文字只在IE浏览器显示
+          	<![endif]-->
+            gt : greater than，选择条件版本以上版本，不包含条件版本
+            lt : less than，选择条件版本以下版本，不包含条件版本
+            gte : greater than or equal，选择条件版本以上版本，包含条件版本
+            lte : less than or equal，选择条件版本以下版本，包含条件版本
+            ! : 选择条件版本以外所有版本，无论高低
+          
+     （2） 说明：在标准模式中
+          IE6支持"*"和"_"
+          “-″减号是IE6专有的hack
+          IE7支持"*"但是不能支持"_"
+          “\9″ IE6/IE7/IE8/IE9/IE10都生效
+          “\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack
+          “\9\0″ 只对IE9/IE10生效，是IE9/10的hack
+     （3）选择器前缀法
