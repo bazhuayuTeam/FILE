@@ -5,4 +5,57 @@
                   有继承
                   初始值；auto
                   运用于display为table和display为inline-table的元素
+
+二、列表和生成内容
+    列表类型：list-style-type：none 	无标记。
+                                disc 	默认。标记是实心圆。
+                                circle 	标记是空心圆。
+                                square 	标记是实心方块。
+                                decimal 	标记是数字。
+                                decimal-leading-zero 	0开头的数字标记。(01, 02, 03, 等。)
+                                lower-roman 	小写罗马数字(i, ii, iii, iv, v, 等。)
+                                upper-roman 	大写罗马数字(I, II, III, IV, V, 等。)
+                                lower-alpha 	小写英文字母The marker is lower-alpha (a, b, c, d, e, 等。)
+                                upper-alpha 	大写英文字母The marker is upper-alpha (A, B, C, D, E, 等。)
+                                lower-greek 	小写希腊字母(alpha, beta, gamma, 等。)
+                                lower-latin 	小写拉丁字母(a, b, c, d, e, 等。)
+                                upper-latin 	大写拉丁字母(A, B, C, D, E, 等。)
+                                hebrew 	传统的希伯来编号方式
+                                armenian 	传统的亚美尼亚编号方式
+                                georgian 	传统的乔治亚编号方式(an, ban, gan, 等。)
+                                cjk-ideographic 	简单的表意数字
+                                hiragana 	标记是：a, i, u, e, o, ka, ki, 等。（日文片假名）
+                                katakana 	标记是：A, I, U, E, O, KA, KI, 等。（日文片假名）
+                                hiragana-iroha 	标记是：i, ro, ha, ni, ho, he, to, 等。（日文片假名）
+                                katakana-iroha 	标记是：I, RO, HA, NI, HO, HE, TO, 等。（日文片假名）
+              有继承
+              初始值：disc
+      list-style-type只能运用于display为list-item的元素。
+      列表项图片：list-style-image：url none inhert
+                有继承
+                初始值：none
+                运用于display为list-item的元素。
+                当不能使用图片的视乎，可以 li{list-style-image:url(); list-style-type:square;}
+                
+      列表标题位置：list-style-position：inside outside inhert
+                有继承
+                初始值：outside
+                运用于display为list-item的元素。
+                
+    列表样式：list-style：type image position
+            有继承
+            初始值：相对于各个属性。
+            
+    在css2或css2.1都明确的禁止浮动或定位：before和：after内容，还禁止使用列表样式属性和表属性。
+    （1）如果：before和：after主体是块级元素，则display的属性只接受值none inline block marker 其他值都做为block处理
+    （2）如果：before和：after主体是行内元素，则display的属性只接受值none inline其他属性值都作为inline处理。
+    
+    content：normal url attr（）
+          无继承
+          初始值：normal
+          插入属性值：a[href]:after{content:attr(href);}
+    
+      
+      
+            
                   
