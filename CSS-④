@@ -1,0 +1,8 @@
+一、表大小
+  确定表宽度有两种不同方式：固定宽度布局和自动宽度布局。可以使用table-layout来选择使用哪种方式来计算表的宽度。
+  不管使用哪种副局算法，都能自动计算，但是唯一的区别就是固定宽度布局的速度优于自动宽度布局。
+    计算表格宽度：table-layout：auto fixed inhert
+                  有继承
+                  初始值；auto
+                  运用于display为table和display为inline-table的元素
+                  
