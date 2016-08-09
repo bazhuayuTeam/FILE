@@ -161,9 +161,92 @@ nodeType的值为2  nodeName的值是特性的名称
 nodeValue的值为特性的值  parentNode的值为null
 三个属性：name value specifed（布尔值，表示是在代码中指定的还是默认的）。
 
+**************************
+动态脚本加载：指页面加载不存在的脚本。
+function loadScript（url）{
+  var script = document.createElement("script");
+  script.type="text/javascript";
+  script.src="client.js";
+  document.body.appendChild("script");
+}
+但是这种方式我们并不知道脚本是否加载完成。并且IE将<script>视为一种特殊的元素，不允许访问他的子节点，
+但是可以使用<script>的text属性来指定javaScript代码。
+修改后的方式：
+function loadScript（code）{
+  var script = document.createElement("script");
+  script.type="text/javascript";
+  try{
+    script.appendChild(document.createTextNode(code));
+  }catch(ex){
+      script.text=code;
+  }
+  document.body.appendChild(script);
+}
+动态样式：指页面加载时不存在的样式。
+function loadScript（url）{
+  var link =document.createElement("link");
+  link.real="stylesheet";
+  link.type="text/css";
+  link.href="style.css";
+  var head = dovument.getElementsByTagName("head")[0];
+  head.appendChild(link);
+}
+与动态的添加脚本一样上面的方式是存在一定的问题的。并且问题和动态脚本加载时一样的。
+function loadStyle（css）{
+  var style=document.createElement("style");
+  style.type="text/css";
+  try{
+    style.appendChiild(document.createTextNode(css));
+  }catch(ex){
+    style.styleSheet.cssText=css;
+  }
+  var head = document.getElementsByTagName("head")[0];
+  head.appendChild(style);
+}
+******************************************
+操作表格
+var table = document.createElement("table");
+table.border=1;
+table.width="100%";
+var tbody = document.createElement("tbody");
+table.appendChild(tbody);
 
+tbody.insertRow(0);
+tbody.rows[0].insertCell(0);
+tbody.rows[0].cells[0].appendChild(document.createTextNode("dd"))
 
+document.body.appendChild(table);
+HTMLDOM 属性和方法介绍
+属性或方法 说明
+caption 保存着<caption>元素的引用;
+tBodies 保存着<tbody>元素的HTMLCollection集合;
+tFoot 保存着对<tfoot>元素的引用;
+tHead 保存着对<thead>元素的引用;
+rows 保存着对<tr>元素的HTMLCollection集合;
+createTHead() 创建<thead>元素,并返回引用;
+createTFoot() 创建<tfoot>元素,并返回引用;
+createCpation() 创建<caption>元素,并返回引用;
+deleteTHead() 删除<thead>元素;
+deleteTFoot() 删除<tfoot>元素;
+deleteCaption() 删除<caption>元素;
+deleteRow(pos) 删除指定的行;
+insertRow(pos) 向rows集合中的指定位置插入一行;
 
+<tbody>元素添加的属性和方法
+rows 保存着<tbody>元素中行的HTMLCollection;
+deleteRow(pos) 删除指定位置的行;
+insertRow(pos) 向rows集合中的指定位置插入一行;
+
+<tr>元素添加的属性和方法
+cells 保存着<tr>元素中单元格的HTMLCollectioin集合;
+deleteCell(pos) 删除指定位置的单元格;
+insertCell(pos) 向cells集合的指定位置插入一个单元格,并返回引用;
+
+// HTMLDOM获取表格的<caption>
+alert(table.caption.innerHTML); // 获取caption的内容;
+
+// PS:在一个表格中<thead>和<tfoot>是唯一的,只能有一个;
+// 而<tbody>不是唯一的,可以是多个,这样导致最后返回的<thead>和<tfoot>是元素引用;而<tbody>是元素集合;
 
 
 
