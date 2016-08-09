@@ -40,7 +40,7 @@ Dom是W3c的标准，是定义HTML和XML的标准。W3C的文档对象模型是�
 2、HTML DOM结点。
 在HTML中所有的事务都是结点，DOM被视为是节点树的HTML。
 
-注意在IE中所有的DOM对象都是以COM对象形式出现的，这意味着IE中的DOM对象和JavaScript对象的行为特点不是一致的。
+注意在IE中所有的DOM对象都是以COM（组件对象模型）对象形式出现的，这意味着IE中的DOM对象和JavaScript对象的行为特点不是一致的。
 
 （1）Node类型
 Node.ELEMENT_NODE        (1)
@@ -58,14 +58,14 @@ Node_NOTATION_NODE       (12)
 注意在IE中没有公布node的构造函数，所有在IE中不能使用上诉的12中类型，但是可以使用数字。
 
 节点关系：
-nodeChildes     parentNode    perivousSibling       lastSibling
-firstNode       lastNode      hasNodeChildes()      owerDocument
+childeNodes     parentNode    perivousSibling       lastSibling
+firstNode       lastNode      hasNodeChildes()      owerDocument（该属性指向表示整个文档的文档结点）
 
 操作结点：
 appendChild():用于向childNodes列表末尾添加一个结点；
 var node = document.createElement("div");
 var text = document.createTextNode("this is div");
-node.appendChild(node);
+node.appendChild(text);
 var element =  document.getElementById("div");
 element.appendChild(node);
 
@@ -75,9 +75,9 @@ replaceChild(newNode , oldNode);
 
 removeChild(node);注意被替换和删除的结点依然还在文档当中，只是在文档中没有这些结点的位置。
 
-cloneNode();
+cloneNode();当设置cloneNode(true)表示深复制，复制的是整个子节点树，在设置为false的时候表示是浅复制，只复制结点本身。
 
-normalize();这个方法是清楚没有文本的结点和重复结点。
+normalize();这个方法是清除没有文本的结点和重复结点。splitText（number）分割文本节点。
 
 
 
@@ -98,7 +98,7 @@ var referrer = document.refferrer;   取得来源页面的URL;
 查找元素：
 document.getElementById(ID);在IE8及较低的版本都是不区分ID的大小写的。在IE7及较低的版本中调用document.getElementById(ID),
 表单的name和ID相同也会被返回。
-document.getElementsByTagName(TAG);返回值可以使用三个方法访问[] item() namedItem(name属性)
+document.getElementsByTagName(TAG);返回值可以使用三个方法访问[] item() namedItem(name属性)返回的是一个数组
 docuemnt.getElementsByTagName("*");返回文档的全部元素
 document.getElementsByName();HTMLDcoument提供
 document.anchors; 返回文档的<a>
@@ -106,20 +106,60 @@ document.applets;
 document.forms;
 document.images;
 document.links;
-document.implementation.hasFeatrue(名称，版本);
-write() writeln() open() close()
+document.implementation.hasFeatrue(检查DOM的名称，版本);DOM一致性的检查。
+write() writeln() open() close()   open() close()分别是打开和关闭页面的输出流
 
 （3） ELemnt(元素)类型
- 
+nodeType的值为1 nodeName的值是元素的标签名（要访问元素的标签名，可以是nodeName也可以是tagName）
+nodeVluae的值为null parentNode可能是Document或Element
+
+在HTML中标签名始终是以大写形式存在，在xml中标签名是和源代码一直。
+
+可以在任何浏览器通过脚本访问Element类型的构造函数及原型。
+
+取得属性：getAttribute setAttribute removeAttribute(完全的删除)
+并且这种方式还可以获取自定义属性，在HTML中设置自定义属性应该加上daya-前缀。
+
+注意在通过属性访问和通过getAttribute()访问特性的时候，表现有时候是不一样的，例如：style通过属性访问是返回一个对象，
+通过getAttrbute是返回一个css文本，在比如onlick这样的浏览器事件通过属访问是返回一个javaScript函数，但是通过getAttribute
+访问是放回代码的字符串。（在IE7之前放回是一样的）
+
+由于这些差别，在操作DOM的时候一般不适用getAttribute而是使用属性，只有在获取自定义属性的时候才使用getAttribute
+
+attributes属性：Element是唯一一个使用attibutes的DOM节点类型。
+这个属性包含一个“动态集合” 这个集合拥有很多的方法：getNamedItem（name）返回nodeName属性等于name的节点。
+                                                     removeNamedItem（name）从列表中移除nodeName等于name的节点
+                                                     setNamedItem（name）添加节点，以节点的nodeName属性为引所。
+                                                     item（pos）返回位于数据pos位置处的节点。
+
+创建元素：document.createElement("div")可以创建元素，但是为更好的兼容IE7或更早的版本的某些问题①，可以使用
+document，crateElement("<div id=\"myNewDiv\" class=\"box\"></div>")这样的形式来兼容。
+注释①：不能动态的设置iframe元素的name特征。
+        不能通过reset方法重置input
+        type为reset的butoon不能重置表单
+        动态创建的一批nanm相同的单选按钮之间彼此没有关系。
 
 
+(4)Text类型
+  nodeType的值为3  nodeName的值为"#text"
+  nodeValue为节点包含的文本（可以通过nodeVlue属性或者是data属性访问text节点中的文本）  parentNode是一个Element。
+  操作节点的文本：appendData（text）将text添加到节点的末尾
+                  deleteData（offset，count）从offset指定位置开始删除count个字符。
+                  insertData（offset，text）从pffset指定位置开始插入text
+                  replaceData（offset，count，text）
+                  splitText（offset）从offset指定位置将当前的文本节点分为两个文本节点。
+                  substringData（offset，count）提取offset+count个字符。
 
+（5）Comment类型
+nodeType的值为8   nodeName的值为"#comment"
+nodeVlue的值是注释的内容（nodeVlue data）   parentNode可能是Document或Element
 
+document.createComment("A Comment") 创建注释
 
-
-
-
-
+（6）Attr类型
+nodeType的值为2  nodeName的值是特性的名称
+nodeValue的值为特性的值  parentNode的值为null
+三个属性：name value specifed（布尔值，表示是在代码中指定的还是默认的）。
 
 
 
