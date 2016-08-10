@@ -248,10 +248,68 @@ alert(table.caption.innerHTML); // 获取caption的内容;
 // PS:在一个表格中<thead>和<tfoot>是唯一的,只能有一个;
 // 而<tbody>不是唯一的,可以是多个,这样导致最后返回的<thead>和<tfoot>是元素引用;而<tbody>是元素集合;
 
-
-
-
-
+*************************************************
+DOM扩展
+（1）选择符API 
+    LEVEL 1：querySelector();
+             querySlectorAll(); 返回的是一个NodeList集合的实例。
+    LEVEL2：matchesSelector();查看一个元素与该选择器是否匹配。但是浏览器对这个方法的兼容不是很理想，在使用的时候需要加上
+            浏览器厂商前缀。（ms o webkit moz）
+（2）元素遍历
+  childElementCount;
+  firstElementChild;
+  lastElementChild;
+  perivousElementChild;
+  nextElementChild;
+  （3）HTML5
+      getElementsByClassName()IE9+支持；返回一个NodeList集合；
+      classList属性：add()
+                     contains()
+                     remove()
+                     taggle()
+                    浏览器支持情况不好， FF3.6+，chrome
+      焦点管理：activeElement：这个属性始于会引用当前获得了焦点的元素。
+              例如：
+              var button =document.getELementById("button");
+              button.focus();
+              console.log(document.activeElement===button);
+              默认情况下  文档加载完成时 ，document.activeElement保存的是document.body元素的引用。文档加载的时候是null（IE4+）
+      HTML的变化： (1)readState属性：loading（正在加载文档）
+                                     complete（已近加载完文档）
+      
+                   (2)兼容模式：IE给document添加一个名为compatMode。告诉浏览器采用哪种渲染模式。
+                                在标准模式下document.compatMode==="CSS1Compat"
+                                在混杂模式中document.compatMode==="BackCompat"
+                   (3)head属性：document.head
+                   (4)字符集属性：document.charset(FF不支持) document.Characterset(只有FF支持) document.defaultCharset(IE Safari Chrome)
+      自定义属性：目的是为元素提供与渲染无关的信息，或者提供语义信息（data-前缀，FF6+,Chrome支持）
+      插入标记：innerHTML属性
+                outerHTML属性
+                insertAdjacentHTML()--beforebegin,afterbegin,beforeend,afterend
+      scrollIntoView()方法：参数为true或者不传入参数，那么窗口会让调用元素与视口尽可能齐平，
+                            参数设置为false，那么窗口中尽可能的把调用元素的全部显示在窗口中。
+    
+    
+    （4）文档模式:IE8引入了一个新的概念叫做“文档模式”
+                 IE9四种文档渲染模式：IE5以混合模式渲染页面
+                                      IE7以IE7标准模式渲染页面
+                                      IE8以IE8标准模式渲染页面
+                                      IE9以IE9标准模式渲染页面
+                要想强制浏览器以某种模式渲染页面：设置http的头信息X-UA-Compatible
+                                                  <meta http-equiv="X-UA-Compatible" content="IE=IEversion">
+                                                    IEversion:5,7,8,9,EmulateIE9,EmulateIE8,EmulateIE7,edge
+                <%--IE=edge告诉IE使用最新的引擎渲染网页(禁用兼容模式)，chrome=1则可以激活Chrome Frame--%>
+              	<meta http-equiv="X-UA-Compatible" content ="IE=edge,chrome=1" />
+              	<%--国产浏览器使用极速模式(Chromium内核)--%>
+              	<meta name="renderer" content="webkit" />
+              	<meta http-equiv="pragma" content="no-cache" />
+              	<meta http-equiv="cache-control" content="no-cache" />
+              	<meta http-equiv="expires" content="0" />
+              	<%--如果jsp页面有pageEncoding="UTF-8"的设置,该meta可以省略--%>
+              	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+              	
+    
+      
 
 
 
