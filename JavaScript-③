@@ -29,7 +29,28 @@ function clone(obj){
     return obj;
   }
 }
-
+但是光这样的拷贝是不行的，这样的拷贝存在问题，当存在对象时多层的时候，是不能正常拷贝的。
+function clone(obj){
+  var buf;
+  if(obj instanceof Array){
+    buf=[];
+    buf = obj.concat();//buf = obj.slice(0);
+    return buf;
+  }
+  else if(obj instanceof Object){
+    if(obj typeof !="object"){
+      return obj;
+    }
+    var buf={};
+    for(var ob in obj){
+      buf[ob]=clone(obj[ob]);
+    }
+    return buf;
+  }
+  else{
+    return obj;
+  }
+}
 二、Dom学习
 
 1、什么是Dom？
