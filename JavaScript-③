@@ -38,7 +38,7 @@ function clone(obj){
     return buf;
   }
   else if(obj instanceof Object){
-    if(obj typeof !="object"){
+    if(typeof obj !="object"){
       return obj;
     }
     var buf={};
