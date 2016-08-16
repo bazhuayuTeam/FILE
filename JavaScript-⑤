@@ -1,0 +1,43 @@
+一、表单验证
+form表单的属性：acceptCharset 服务器能处理的字符集
+                action elements enctype请求的编码类型 length表单控件的数量 method要发送的http的请求get post 
+                name 表单的名称
+                reset() submit() target发送请求和就收响应的窗口名称
+表单的提交三种方式
+<input type="submit"/>
+<button type="submit"/>
+<input type="image"/>
+
+或者js提交表单
+var  form = docuemnt.getElementById("form");
+form.submit();
+
+阻止提交表单 EventUtil.addHandler(form,"submit",functiuon(event){
+  event = EventUtil.getEvent(event);
+  EventUtil.prevetnDefault(event);
+});
+
+1、共有的表单属性字段
+  disabled readOnly name form（指向当前字段所属表单的指针）
+  tabIndex（表示当前字段的切换序号）type value
+2、共有的表单字段方法
+  focus() blur() 
+  注意：当一个input元素的type是hidden就不能为这个元素设置focus()方法，
+  并且在设置css为display和visibility属性也不能为元素设置focus()方法。
+  HTML5属性autofocus自动把焦点移到相应的字段上面。
+  
+  在默认的情况下，只有表单字段可以获取焦点。对于其他元素来说，当设置tabIndex=-1和调用focus()方法也可以让这些元素获取焦点(opera不支持)
+3、共有的表单字段事件
+blur change focus
+
+
+文本框脚本：input textarea
+input ：size maxlength value
+textarea：cols rows 
+ 1、选择脚本
+
+
+
+
+
+
