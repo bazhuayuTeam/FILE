@@ -31,14 +31,47 @@ form.submit();
 blur change focus
 
 
-文本框脚本：input textarea
+文本框脚本：input textarea：：：：：：：：：：：：：：：：：：：：：：：：：：：：
 input ：size maxlength value
 textarea：cols rows 
  1、选择脚本
   slect()选择当前文本框的所有文本。这个比较吊
   select事件
  2、取得选中的文本
- 
+  selecttionStart selectionEnd
+  
+ 3、选择部分文本
+  setSelectionRange(start,end);
+  跨浏览器的选择部分文本
+  if(input.setSelectionRange){
+    input.setSelectionRange(start,end);
+  }
+  else if(inout.createTextRange){
+    var range = input.createTextRange();
+    range.collapse(true);
+    range.moveStart("character",satrt);
+    range.moveEnd("character",end);
+    range.select();
+    input.focus();
+  }
+  
+  
+  
+  过滤输入：：：：：：：：：：：：：：：：：：：：：：：
+  1、屏蔽字符
+  EventUtil.addHandler(input,"keypress",function(event){
+    event = EventUtil.getEvent(event);
+    EventUtil.preventDefault(event);
+  });所有的字符输入都会被屏蔽。
+  2、操作剪切板
+  beforecopy copy beforecut cut beforepaste paste
+  访问剪切板的数据：clipboardDate对象（在IE中这个属性是window的属性。在其他浏览器是event的属性）
+  这个属性有三个方法：getDta(MIME类型);setData(MIME类型，text);clearData();
+  
+  
+  
+  
+  
   
 
 
