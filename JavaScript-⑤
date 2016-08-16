@@ -67,14 +67,99 @@ textarea：cols rows
   beforecopy copy beforecut cut beforepaste paste
   访问剪切板的数据：clipboardDate对象（在IE中这个属性是window的属性。在其他浏览器是event的属性）
   这个属性有三个方法：getDta(MIME类型);setData(MIME类型，text);clearData();
+  3、自动焦点切换
+  (function(){
+    function tabForword(event){
+       event = EventUtil.getEvent(event);
+        var targrt = EventUtil.getTarget(event);
+        if(target.value.length==target.maxLength){
+          var form = target.form;
+          for(var i=0;i<form.length;i++){
+            if(form.elements[i]==target){
+              if(form.elements[i+1]){
+                form.elements[i+1].focus();
+              }
+              return;
+            }
+          }
+        }
+    }
+        var textbox1 = document.getElementById("textTel1");
+        var textbox2 = document.getElementById("textTel2");
+        var textbox3 = document.getElementById("textTel3");
+        EventUtil.addHandler(textbox1,"keyup",tabForword);
+        EventUtil.addHandler(textbox2,"keyup",tabForword);
+        EventUtil.addHandler(textbox3,"keyup",tabForword);
+  })();
+  
+  HTML5约束验证API
+   1、必填字段 required
+  <inout type="text" name="username" required/>
+  检查字段是否为必填字段
+  var required = document.forms[0].elements["username"].required;
+  检查是否浏览器是否支持required
+  var required = "required" in document.createElement("input");
+  2、其他的输入类型
+   email url date month week datetime datetime-local time number range ...
+   min max step（刻度）
+   setUp() setDown()
+  3、输入模式 patten
+  访问模式
+  var pattern = document.forms[0].elements["count"].pattern;
+  检查浏览器是否支持pattern
+  var isPattern = "pattern" in document.createElement(input);
+  4、检查有效性 
+   checkValidity()检查某个字段是否有效（依据是前面定义的约束）
+   validity告诉你字段为什么有效或无效。  
+  5、禁止验证 novalidate属性禁止表单验证
+              formnovalidate禁止某个按钮可以不用验证。
+              
+  
+  选择框脚本
+  select标签的属性和方法
+    add(newOption,relOption)
+    multiple options控件集合
+    remove(index) selectedIndex选中项的下表
+    size
+  option的属性和方法
+  index lable selected text value
+  1、选择选项
+  针对只选择一项
+   var selectedOption = select.options[select.selectedIndex];
+  针对选择多项
+  function getSelect(select){
+    var result = new Array();
+    var option = null;
+    for(vari = 0,len = select.options.length;i<len;i++){
+      option = select.options[i];
+      if(option.selected){
+        result.push(option);
+      }    
+    }
+    return result;
+  }
+  2、添加选项
+  第一种方式：Dom方法
+  第二种方法：option构造函数 var option =new Option("Option text","Option value"); select.appendChild(option);在IE8之前有问题。
+  第三种方法：add() var option = new Option("Option text","Option value"); select.add(option,undefined);
+  3、移除选项
+  第一种方法：Dom方法
+  第二种方法：select.remove(index);
+  第三种方法：select.option[index]=null;
+  4、移动和重排选项
+  移动：Dom的appendChild()方法可以直接把一个选择框的一项移到另一个选择框。吊
+  重排序：Dom方法，使用insertBefore()方法。
+  
+  表单序列化：在javaScript中可以通过type，name，value等属性一起实现对表单的序列化。
   
   
   
+  富文本编辑：在页面中嵌入一个包含HTML页面的iframe，通过设置designMode属性(off on-表示页面可编辑)，这个空白的HTML可以被编辑。
+  富文本编辑：使用contenditable属性，这个属性可以给页面的任意元素；
+  操作富文本：
+            实现富文本编辑交互的主要方式；document.execCommand(要执行的命令，是否为当前浏览器提供一个界面的布尔值，执行命令的值)；
+  富文本选取：在富文本编辑器中，使用框架的getSelection()方法，可以确定实际选择的文本。这个方法是window对象和document对象的属性
+  调用它返回一个表示当前选择文本的Selection对象。还包含很多属性。
   
   
-  
-
-
-
-
 
