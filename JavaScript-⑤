@@ -35,7 +35,11 @@ blur change focus
 input ：size maxlength value
 textarea：cols rows 
  1、选择脚本
-
+  slect()选择当前文本框的所有文本。这个比较吊
+  select事件
+ 2、取得选中的文本
+ 
+  
 
 
 
