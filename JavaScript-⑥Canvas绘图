@@ -1,0 +1,152 @@
+Canvas绘图(IE9+)
+1、基本用法
+    使用<canvas>，必须先设置width和height属性，如果不添加样式，不绘制图片，在页面上看不到改元素的。
+    要在这块画布上面画图必须取得绘图上下文，而取得绘图上下文对象的引用，需要电泳getContext()方法。
+    传人"2d"就可以取得2D上下文。
+    var drawing = document.getElementById("drawing");
+    if(drawing.getContext){
+      var context = drawing.getContext("2d");
+      var imgURI =draeing.toDataURI("URI");//获取图片的URI,默认是PNG格式
+      
+      var image = docuemnt.createElement("img");
+      img.src=imgURI;
+      image.appendChild(image);
+    }
+  
+  2、2d上下文
+  2d画图的两种基本的画图方式是填充和描边。
+  填充：是指使用指定的样式（颜色、渐变、图片）填充图片。
+  描边：就是在图片的边缘画线。
+  操作结果取决于：fileStyle、storkeStyle者连个属性，这个属性可以是字符串、渐变对象、模型对象。
+  var drawing = document.getElementById("drawing");
+    if(drawing.getContext){
+      var context = drawing.getContext("2d");
+      context.fillStyle = "#000";
+      context.strokeStyle="red";
+    }
+  3、绘制矩形：fillRect(),fillStyle(),strokeRect()，strokeStyle(),clearRect();
+   var drawing = document.getElementById("drawing");
+   if(drawing.getContext){
+      var context = drawing.getContext("2d");
+      //描绘填充矩形
+      context.fillStyle="red";
+      context.fillRect(10,10,50,50);
+      context.fillStyle="rgba(0,0,255,0.5)";
+      context.fillRect(30,30,50,50);
+      //描绘描边矩形
+      context.lineWidth=10;//设置线宽
+      context.lineCap="round"；//设置线头形状，round，butt，square。
+      context.lineJoin="round";//设置线条相交的方式，round，bevel，miter
+      context.strokeStyle="red";
+      context.strokeRect(10,10,50,50);
+      context.strokeStyle="red";
+      context.strokeRect(30,30,50,50);
+	    context.strokeStyle="grad";
+	    context.strokeRect(40,40,50,50);
+	    
+	    context.clearRect(10,10,40,40);//清除一小块矩形。
+   }
+  4、绘制路径
+   var drawing = document.getElementById("drawing");
+   if(drawing.getContext){
+      var context = drawing.getContext("2d");
+      //开始路径，必须有。
+      context.beginPath();
+      
+      context.arc(100,100,99,0,2*Math.PI,false);//以(100,100)为圆心99为半径，0为开始弧度，2*Math.PI为结束幅度 画圆。false表示顺时针
+      context.arcTo(100,100,200,200,50);//从(100,100)绘制一条曲线到(200,200)半径50
+      context.bezierCurveTo(50,50,100,100,10,10);//从上一点开始绘制，到(10,10)结束，并且以(50,50)(100,100)为控制点。
+      context.guadraticCurveTo(20,20,10,10);//从上一点开始绘制一条二次曲线，到(10,10)为止。以(20,20)为控制点
+      context.rect(x,y,width,height);
+      context.moveTo(194,100);
+	    context.arc(100,100,94,0,2*Math.PI,false);
+      context.moveTo(100,100);
+	    context.lineTo(100,15);
+	    context.moveTo(100,100);
+	    context.lineTo(35,100);
+	    
+	    //结束。。。。。。。
+	    context.stroke();//描边
+	    context.closePath();//连接起点
+	    context.fillStyle();//填充
+	    context.clip();//创建剪切区域
+    }
+  注意：还有一个方法是isPointInPath(x,y);确定某一点是否在画布上。
+  
+  5、绘制文本
+    fillText(text,x,y,最大像素宽);strokeText(text,x,y,最大像素宽);
+    这两个方法还有三个属性：font文本样式 textAlign文本对齐方式（start end left right center）  
+    、textBaseline文本的基线（top，hanging，middle，bottom，alphabetic，ideographic）；
+  
+  6、变换
+   rotate(angle)围绕圆点旋图片angle弧度
+   scale(sx,sy)缩放图像,在x方向乘以sx，y方向乘以sy。
+   translate(x,y)将坐标原点移动到(x,y);
+   transform(.....);直接修改变换矩阵
+   setTransform(....)；将变换矩阵变成默认状态。
+   
+   context.save()；可以保存前文的设置，这些设置保存在一个栈里面。并且可以使用context.restore()方法一级一级的取回栈中的设置。
+   
+   7、绘制图片
+   context.drawImage(image,源图像x坐标,源图像y坐标,源图像width,源图像height,目标图像x坐标,目标图像y坐标,目标图像width,目标图像height);
+   
+   8、阴影
+   shadowColor：阴影颜色
+   shadowOffsetX：x轴方向的偏移量
+   shadowOffsetY：y轴方向的偏移量
+   shadowBlur：模糊的像素值
+   var drawing = document.getElementById("drawing");
+   if(drawing.getContext){
+      var context = drawing.getContext("2d");
+      context.shadowColor="rgba(0,0,0,0.5)";
+      context.shadowOffsetX=5;
+      context.shadowOffsetY=4;
+      context.shadowBlur=4;
+      context.fillStyle="#ff0000";
+      context.fillRect(10,10,50,50);
+      
+      context.fillStyle="rgba(0,0,255,1)";
+      context.fillRect(30,30,50,50);
+      
+    }
+   9、渐变
+   var drawing = document.getElementById("drawing");
+   if(drawing.getContext){
+      var context = drawing.getContext("2d");
+      var gradient = context.createLinearGradient(30,30,70,70);//创建渐变
+      //创建径向渐变， var gradient = context.createRadialGradient(55,55,10,55,55,30);
+      gradient.addColorStop(0,"white");
+      gradient.addColorStop(1,"red");
+      context.fillStyle="#ff0000";
+      context.fillRect(10,10,50,50);
+      context.fillStyle=grident;
+      context.fillRect(30,30,50,50);
+    }
+   10、模式
+   模式其实就是重复的图像，可以用来填充或描边图形
+   var image = document.images[0];
+   pattern = context.createPattern(image,"repeat");
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  
+  
+  
+  
+  
