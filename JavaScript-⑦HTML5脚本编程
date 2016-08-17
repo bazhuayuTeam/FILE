@@ -1,0 +1,2 @@
+1、跨文本消息传递（XDM）
+XDM的核心是postMessage()方法
