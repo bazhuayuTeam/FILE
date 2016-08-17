@@ -127,7 +127,12 @@ Canvas绘图(IE9+)
    var image = document.images[0];
    pattern = context.createPattern(image,"repeat");
    
+   11、使用图形数据
+   getImageDta(x,y,width,height);返回对象的实例，每个ImageDta有三个属性width，height，data
    
+   12、合成
+   context.globalAlpha=number;//number是0-1之间的数字
+   context.globalCompositeOperation="source-over";//表示后绘制的图片怎么和先绘制的图片结合。
    
    
    
