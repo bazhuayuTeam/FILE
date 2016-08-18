@@ -1,0 +1,29 @@
+一、JSON
+JSON：JavaScript Object Notation(JavaScript 对象表示法)，是存储和交互文本信息的数据语法
+是一种轻量级的数据格式，它基于ECMAScript的一个子集，而不是一种编程语言。独立于语言，具有自我了解，更容易理解。
+
+JSON语法可以表示的三种类型的值：
+1、简单值：字符串（JSON字符串必须使用双引号，单引号会错误）、数值、布尔值、null，但是不支持undefined。
+2、对象：复杂数据类型，对象的属性必须使用双引号。
+3、数组：复杂数据类型。
+JSON不支持变量、函数、对象实例。JSON不存在变量。
+
+解析与序列化
+JSON流行的原因：拥有和JavaScript类似的语法。可以把JSON数据结构解析为有用的JavaScript对象。
+
+JSON解析：1、早起的json解析式使用eval()函数，eval()可以解析、解释并返回JavaScript对象和数组。
+          2、ECMAScript5对解析JSON的行为进行了规范。，定义了全局的JSON对象（IE8+）。这个对象
+          有两个方法：stringify()、parse();
+JSON.stringify()方法是把一个JSON对象序列化为一个JSON字符串。（默认情况下是不包括任何的空格字符和缩进）    
+JSON.parse()
+
+序列化选项：
+JSON.stringify(js对象，过滤器，选项);
+过滤器如果是一个数组，那么JSON.stringify()的结果中只有数组包含的属性。
+过滤器如果是一个函数，那么JSON.stringify()的结果根据函数进行计算。
+选项用于控制结果中的缩进和空白符。如果是一个数字表示每个级别缩进的空格数（最大为10，大于10将认为是10）。
+                                  如果是一个字符串而非数字，那这个字符串会被用为缩进字符。（字符最长不超过10个）。
+                                  
+toJSON()方法：返回字符串，并且返回自身的JSON数据格式。
+
+解析选项：JSON.parse(jsonText,function(key,value){//每个键值对，都会调用这个函数});
