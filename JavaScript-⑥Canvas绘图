@@ -1,7 +1,7 @@
 Canvas绘图(IE9+)
 1、基本用法
     使用<canvas>，必须先设置width和height属性，如果不添加样式，不绘制图片，在页面上看不到改元素的。
-    要在这块画布上面画图必须取得绘图上下文，而取得绘图上下文对象的引用，需要电泳getContext()方法。
+    要在这块画布上面画图必须取得绘图上下文，而取得绘图上下文对象的引用，需要调用getContext()方法。
     传人"2d"就可以取得2D上下文。
     var drawing = document.getElementById("drawing");
     if(drawing.getContext){
@@ -10,7 +10,7 @@ Canvas绘图(IE9+)
       
       var image = docuemnt.createElement("img");
       img.src=imgURI;
-      image.appendChild(image);
+      draw.appendChild(image);
     }
   
   2、2d上下文
