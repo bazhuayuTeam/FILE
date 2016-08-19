@@ -1,0 +1,208 @@
+一、XMLHttpRequest对象
+IE5是第一个引用XHR的浏览器。在IE5，XHR是通过MSXML库中的ActiveX对象实现的。（MSXML2.XMLHttp，MSXML2.XMLHttp.3.0,MSXMLHttp.6.0）
+//创建XHR对象，为了兼容IE7之前的版本
+function createXHR(){
+  if(typeof XMLHttpRequest !="undefined"){
+    return new XMLHttpRequest();
+  }
+  else if(typeof ActiveXObject !="undefined"){
+    if(typeof arguments.callee.actioveXString!="string"){
+       var versions = ["MSXML.XMLHttp","MSXML.XMLHttp.3.0","MSXMLHttp.6.0"];
+       var i , len;
+       for(i=0,len=versions.length;i<len;i++){
+        try{
+          new ActiveXObject(versions[i]);
+          arguments.callee.activeXString = versions[i];
+          break;
+        }catch(ex){
+          //。。。。。。
+        }
+       }
+    }
+    return new ActiveXObject(arguments.callee.activeXString);
+  }
+  else{
+    throw new Error("NO XHR object available");
+  }
+}
+
+XHR的用法
+方法：open(),send();
+xhr.open("get","example.txt",false);
+注意：只能向同一个域中使用相同端口和协议的URL发送请求。
+xhr.send(数据/null);
+属性：responseText:作为响应主体被返回的文本。
+      responseXML:如果响应的内容类型是"text/xml"或"application/xml",这个属性将保存响应数据的XML DOM文档。
+      status:响应的http状态
+      stautsText：http状态的说明。
+      readState：请求/或响应过程的当前活动阶段。
+                0：未初始化。
+                1：启动，已经启动open()方法，但尚未调用send()方法。
+                2：发送，已经调用send()方法，但尚未收到响应。
+                3：接收，已经收到部分响应数据。
+                4：完成，已经收到全部响应数据。
+      注意：只要readSteat属性的值改变一次，都会触发一次readstatechange事件一次。
+      xhr.abort()取消异步请求。
+      
+      
+HTTP头部信息
+  在默认情况下，在发送XHR请求的同事，还会发送下列头部信息。Accept Accept-Charset Accept-Encoding Accept-Language Cookie Host。。
+  使用setRequestHeader()方法可以设置自定义的请求头部信息。这个方法必须在open()方法之后，send()方法之前调用。
+  var xhr = createXHR();
+  xhr.onreadstatechange=function(){
+    if(xhr.readState==4){
+      if((xhr.status>=200&&xhr.statue<300)||xhr.status==304){
+        alert(xhr.responseText);
+      }
+      else{
+        alert("Request was unsuccessful");
+      }
+    }
+  };
+  xhr.open("get","example.php",true);
+  xhr.setRequestHeader("MyHeader","MyValue");
+  xhr.send(null);
+  使用getRequestHeader("头部字段名称");可以获取相应的头部数据。
+  使用getAllRequestHeader();可以获取包含所有头信息的字符串。
+  
+  
+  GET请求：常用用于向服务器查询某些信息。
+    get请求经常发生的一个错误就是查询字符串的格式有问题，查询字符串中的每个参数的名称和值都必须使用encodeURIComponent()进行编码。
+    function addURLParm(url,name,vvalue){
+      url+=url.indexof("?")==-1?"?":"&";
+      url+=encodeURIComponent(name)+"="+encodeURIComponent(value);
+      return url;
+    }
+   POST请求：通常是向服务器发送应该被保存的信息。
+  
+  XMLHttpRequest 2级（不是所有浏览器都实现了这个，只是部分,IE不支持）
+   1、FormData类型：FormData为序列化表单以及创建与表单格式相同的数据提供了便利。
+   var xhr = createXHR();
+   xhr.onreadstatechange = function(){
+    if(xhr.readState==4){
+      if((xhr.status>=200&&xhr.status<300)||xhr.status==304){
+        alert(xhr.responseText);
+      }
+      else{
+        //.........
+      }
+    }
+   };
+   xhr.open("post","postexample.php",true);
+   var form = document.getElementById("form");
+   xhr.send(nwe FormData(form));
+      
+  2、超时设置：XHR对象添加的timeout属性表示请求在等待多少秒之后就停止。并且触发ontimeout事件。    
+  var xhr = createXHR();
+   xhr.onreadstatechange = function(){
+    if(xhr.readState==4){
+      if((xhr.status>=200&&xhr.status<300)||xhr.status==304){
+        alert(xhr.responseText);
+      }
+      else{
+        //.........
+      }
+    }
+   };
+   xhr.open("post","postexample.php",true);
+   xhr.timeout=1000;//仅仅是适用于IE8+
+   xhr.ontimeout=function(){
+    //............
+   };
+   xhr.send(null);    
+  3、xhr.overrideMimeType();用于重写XHR响应的MIME类型。（IE不支持）
+  4、进度事件
+      onload：用于替换readstatechange事件，不用去检查readState属性，接收一个event属性，target属性指向XHR对象的实例。
+      onprogress：这个事件会在浏览器接收新数据期间周期性的触发。
+      
+      
+      
+CORS:跨域资源共享。
+    1、微软IE8引入了XDR类型，XDR对象的安全机制部分实现了W3C的cors规范。
+    XDR和XHR的不同：1、cookie不会随便的请求发送，也不会随响应返回。
+                    2、只能设置请求头信息的Content-Type字段。
+                    3、不能访问响应头信息。
+                    4、只支持get和post请求。
+                    5、所有的XDR请求都是异步的。
+                    
+  var xdr = nwe XDomianRequest();
+  xdr.onload=function(){
+    alert(xdr.responseText);
+  };
+  xdr.onerrer=function(){
+    //捕获错误信息
+  };
+  xdr.timeout=1000;
+  xdr.ontimeout=function(){
+    //......
+  };
+  xdr.open("get","www............");
+  xdr.contextType = "application/x-www-form-urlencoded";//xdr支持contextType属性。
+  xdr.send(null);
+  2、其他平台都是支持XHRHttpRequest对象实现对CORS的原生支持。                  
+                    
+其他跨域技术：
+              1、图片 Ping：动态创建图片经常用于图片 Ping，图片Ping是与服务器进行简单，单向的卡U语通信的一种方式。
+              请求的数据是通过查询字符串形式发送的。浏览器是得不到任何具体的数据，但是可以通过load和error事件侦听
+              是什么时候响应接收的。
+              
+              优点：最常用的是跟踪用户点击次数和动态广告曝光次数。
+              缺点：只能发送get请求。无法访问服务器的响应文本。只适用于，浏览器和服务器的单向响应。
+                    
+              2、JSONP
+              优点：简单，易用，能够直接响应文本，支持浏览器之间的双向通信。
+              缺点：易携带恶意代码，不易确定请求是否失败。虽然HTML5给script新增了一个onerror事件，但是现在没有浏览器支持。
+              
+              3、comet：一种更高级的Ajax（有人称为服务器推送），Ajax是页面向服务请求数据，但是comet 是服务器端向页面推送数据。
+                      实现方式：长轮询、HTTP流。
+                          长轮询是传统轮询（短轮询）的一个翻版，即浏览器定时向服务器发送请求。看有没有更新的数据。
+                          长轮询把短轮询颠覆了一下，页面发送一个到服务器的请求，然后服务器一直保存连接打开，直到有数据
+                          可以发送。发送数据完之后，浏览器关闭连接，随即在发送一个到服务器的新请求，这个过程在页面打开阶段一直持续下去。
+                          HTTP流它在整个生命周期内只适用一个HTTP连接，就是浏览器向服务器发送一个请求，而服务器保持打开的状态，让后周期性
+                          的向服务器发送数据。
+              4、服务器发送事件（SSE：服务器发送事件）是围绕只读comet监护推出的API或者模式。（IE不支持）
+                  用于创建服务器的单向连接，服务器通过这个连接可以发送任意数量的数据，服务器响应的MIME类型必须是text/event-stream
+                  SSE支持长轮询、短轮询、HTTP流，而且能够确定在断开后何时自动连接。
+                  
+              5、web Sockets：在一个单独的持久连接上提供全双工、双向通信。
+                web sockets使用自定义的协议，ws:// wss://
+  
+为保证XHR访问的URL安全：1、要求SSL连接来访问通过XHR请求的资源。
+                        2、要求每一次算法都要附带经过相应算法得到的验证码。
+                        3、要求发送post而不是get。
+                        4、检查来源URL是否可信。
+                        5、基于cookie信息进行验证。
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
