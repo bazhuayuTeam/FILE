@@ -125,8 +125,7 @@ jQuery.fn = jQuery.prototype = {
 			//----$("#div")$("<li>")
 			if ( match && (match[1] || !context) ) {
 				// HANDLE: $(html) -> $(array)
-				if ( match[1] ) {//----$("<li>")
-					
+				if ( match[1] ) {//----$("<li>")					
 					context = context instanceof jQuery ? context[0] : context;
 					// scripts is true for back-compat
 					//jQuery.merge对外是数组合并，对内不但可以数组合并，也可以特殊json合并。
@@ -134,10 +133,10 @@ jQuery.fn = jQuery.prototype = {
 						//jQuery.parseHTML这个方法就是字符串转化为结点数组，比如'<li>1</li><li></li>'转换为['li','li']
 						match[1],//结点
 						context && context.nodeType ? context.ownerDocument || context : document,//指定根节点
-						true//<script>标签是否能添加到页面上
+						true//<script>标签是否能添加到页面上,默认是可以添加的
 					) );
 					//当这样$('<li>',{title:'hi',html:'dd'})的情况;
-					// HANDLE: $(html, props)
+					// HANDLE: $(html, props) rsingleTag是匹配单标签
 					if ( rsingleTag.test( match[1] ) && jQuery.isPlainObject( context ) ) {
 						for ( match in context ) {
 							// Properties of context are called as methods if possible
@@ -150,27 +149,22 @@ jQuery.fn = jQuery.prototype = {
 							}
 						}
 					}
-
 					return this;
-
 				// HANDLE: $(#id)
 				} else {//----$("#div")
 					elem = document.getElementById( match[2] );
-
-					// Check parentNode to catch when Blackberry 4.6 returns
-					// nodes that are no longer in the document #6963
 					if ( elem && elem.parentNode ) {
-						// Inject the element directly into the jQuery object
 						this.length = 1;
 						this[0] = elem;
 					}
-
 					this.context = document;
 					this.selector = selector;
 					return this;
 				}
 
 			// HANDLE: $(expr, $(...))
+			//$("ul",document).find("li");
+			//$("ul",$(document)).find("li");
 			} else if ( !context || context.jquery ) {
 				return ( context || rootjQuery ).find( selector );//find是调用的复杂选择器sizzle
 
@@ -181,6 +175,7 @@ jQuery.fn = jQuery.prototype = {
 			}
 
 		// HANDLE: $(DOMElement)    $(this) $(document)
+		//$(this)  $(document)
 		} else if ( selector.nodeType ) {
 			this.context = this[0] = selector;
 			this.length = 1;
@@ -208,7 +203,7 @@ jQuery.fn = jQuery.prototype = {
 
 	toArray: function() {//转原生数组，这个是实例方法
 		return core_slice.call( this );
-	},
+	}, 
 
 	// Get the Nth element in the matched element set OR
 	// Get the whole matched element set as a clean array
@@ -225,7 +220,8 @@ jQuery.fn = jQuery.prototype = {
 	// Take an array of elements and push it onto the stack
 	// (returning the new matched element set)
 	pushStack: function( elems ) {//入栈
-
+	//$("div").pushStack($("span")).css("background","red").end().css("background","red");
+	//end()的方法就是使用的这个prvObject回溯到上一层
 		// Build a new jQuery matched element set
 		var ret = jQuery.merge( this.constructor(), elems );
 
@@ -244,7 +240,7 @@ jQuery.fn = jQuery.prototype = {
 		return jQuery.each( this, callback, args );
 	},
 
-	ready: function( fn ) {
+	ready: function( fn ) {//DOM加载的工具，调用一个内部的方法。
 		// Add the callback
 		jQuery.ready.promise().done( fn );
 
@@ -270,6 +266,8 @@ jQuery.fn = jQuery.prototype = {
 	},
 
 	map: function( callback ) {//对数组进行处理
+	//var arr=['a','b','c'];
+	//arr=$.map(arr,function(ele,i){return ele+i}); console.log(arr);
 		return this.pushStack( jQuery.map(this, function( elem, i ) {
 			return callback.call( elem, i, elem );
 		}));
@@ -290,46 +288,60 @@ jQuery.fn = jQuery.prototype = {
 jQuery.fn.init.prototype = jQuery.fn;
 
 jQuery.extend = jQuery.fn.extend = function() {//jQuery的继承方法.当写多个自变量的时候，后面的对象都是扩张到第一个对象上面，还可以做浅拷贝和深拷贝
+	/* 
+	当写一个对象自变量的时候
+	$.extend({扩展jq工具方法
+		aaa:function(){
+			alert(1);
+		},
+		bbb:function(){
+			alert(2);
+		}
+	});
+	$.aaa();
+	$.bbb();  this是$ 所有是可以$.aaa();
+	$.fn.extend({ 扩展jq实例方法
+		aaa:function(){
+			alert(3);
+		},
+		bbb:function(){
+			alert(4);
+		}
+	}); 
+	$.().aaa();
+	$.().aaa();this是$.fn所以要使用$.().aaa();
+	当多个对象自变量的时候就是在把后面的对象扩展到第一个对象上面。
+	还可以进行深拷贝和浅拷贝$.extend(true,{},{name:"nn"});
+	*/
 	var options, name, src, copy, copyIsArray, clone,
 		target = arguments[0] || {},//目标对象
 		i = 1,
 		length = arguments.length,
-		deep = false;
-
-	// Handle a deep copy situation
+		deep = false;//是否是深拷贝
 	if ( typeof target === "boolean" ) {//判断是否是使用了深拷贝和浅拷贝
 		deep = target;
 		target = arguments[1] || {};
-		// skip the boolean and the target
 		i = 2;
 	}
-
-	// Handle case when target is a string or something (possible in deep copy)
 	if ( typeof target !== "object" && !jQuery.isFunction(target) ) {//不管目标是什么都把他变成对象
 		target = {};
 	}
-
-	// extend jQuery itself if only one argument is passed
 	if ( length === i ) {
 		target = this;
 		--i;
 	}
-
 	for ( ; i < length; i++ ) {
-		// Only deal with non-null/undefined values
 		if ( (options = arguments[ i ]) != null ) {
-			// Extend the base object
 			for ( name in options ) {
 				src = target[ name ];
 				copy = options[ name ];
-
-				// Prevent never-ending loop
 				if ( target === copy ) {//防止循环引用
+				/* var a={};
+				$.extend(a,{name:a}); */
 					continue;
 				}
-
-				// Recurse if we're merging plain objects or arrays
-				if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {//进行深拷贝
+				//进行深拷贝
+				if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
 					if ( copyIsArray ) {
 						copyIsArray = false;
 						clone = src && jQuery.isArray(src) ? src : [];
@@ -337,11 +349,7 @@ jQuery.extend = jQuery.fn.extend = function() {//jQuery的继承方法.当写多
 					} else {
 						clone = src && jQuery.isPlainObject(src) ? src : {};//在继承的时候，当出现这样的情况处理：var a={name:{age:30}}; var b = {name:{m:20}}; $.extend(true,a,b);
 					}
-
-					// Never move original objects, clone them
 					target[ name ] = jQuery.extend( deep, clone, copy );
-
-				// Don't bring in undefined values
 				} else if ( copy !== undefined ) {//进行浅拷贝
 					target[ name ] = copy;
 				}
@@ -354,7 +362,7 @@ jQuery.extend = jQuery.fn.extend = function() {//jQuery的继承方法.当写多
 };
 
 jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); 当使用$.extend({}); 是扩展工具方法，调用时$....当使用$.fn.extend({});是扩张实例方法,调用是$.fn....
-	// Unique for each copy of jQuery on the page
+	//生成唯一一个jquery字符串，主要是作为映射关系
 	expando: "jQuery" + ( core_version + Math.random() ).replace( /\D/g, "" ),
 	//防止冲突的函数
 	noConflict: function( deep ) {
@@ -368,15 +376,18 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 
 		return jQuery;
 	},
-
-	// Is the DOM ready to be used? Set to true once it occurs.
+/* 	$(function(){});是等DOM加载完才触发。DOM中是等节点加载完才会加载文件。
+	window.onload=function(){}是等所有的东西都加载完才触发 
+	DOMContentLoaded原始jsDOM加载的事件
+	*/
 	isReady: false,
-
-	// A counter to track how many items to wait for before
-	// the ready event fires. See #6781
 	readyWait: 1,
-
-	// Hold (or release) the ready event
+	//推迟DOM的触发
+	/* $.holdReady(true);推迟DOM的触发
+	$.holdReady(false); 
+	取消,这个方法是当你引用一个外部的js的时候，但是加载是
+	异步加载，需要在b.js需要应用a.js的东西，但是b.js
+	先加载，所有可以使用$.holdReady(true)延迟加载b.js。等a.js加载完成了在取消*/
 	holdReady: function( hold ) {
 		if ( hold ) {
 			jQuery.readyWait++;
@@ -400,11 +411,11 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 		if ( wait !== true && --jQuery.readyWait > 0 ) {
 			return;
 		}
-
-		// If there are functions bound, to execute
+		// 看是否已完成，当到这句话的时候说明已经DOM加载
+		//完成，就可以调用done(fn)了
 		readyList.resolveWith( document, [ jQuery ] );
 
-		// Trigger any bound ready events
+		// 主动触发
 		if ( jQuery.fn.trigger ) {
 			jQuery( document ).trigger("ready").off("ready");
 		}
@@ -419,12 +430,12 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 
 	isArray: Array.isArray,
 
-	isWindow: function( obj ) {
+	isWindow: function( obj ) { 
 		return obj != null && obj === obj.window;
 	},
-
+	//判断是不是数字类型
 	isNumeric: function( obj ) {
-		return !isNaN( parseFloat(obj) ) && isFinite( obj );
+		return !isNaN( parseFloat (obj) ) && isFinite( obj );
 	},
 
 	type: function( obj ) {
@@ -436,21 +447,13 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 			class2type[ core_toString.call(obj) ] || "object" :
 			typeof obj;
 	},
-
+	//判断对象自变量$.isPlainObject(obj);
+	//对象自变量就是json，或者new Object()的形式
 	isPlainObject: function( obj ) {
-		// Not plain objects:
-		// - Any object or value whose internal [[Class]] property is not "[object Object]"
-		// - DOM nodes
-		// - window
 		if ( jQuery.type( obj ) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
 			return false;
 		}
-
-		// Support: Firefox <20
-		// The try/catch suppresses exceptions thrown when attempting to access
-		// the "constructor" property of certain host objects, ie. |window.location|
-		// https://bugzilla.mozilla.org/show_bug.cgi?id=814622
-		try {
+		try {//core_hasOwn 
 			if ( obj.constructor &&
 					!core_hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
 				return false;
@@ -458,12 +461,9 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 		} catch ( e ) {
 			return false;
 		}
-
-		// If the function hasn't returned already, we're confident that
-		// |obj| is a plain object, created by {} or constructed with new Object
 		return true;
 	},
-
+	//判断是否是空对象和空数组
 	isEmptyObject: function( obj ) {
 		var name;
 		for ( name in obj ) {
@@ -475,10 +475,8 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 	error: function( msg ) {
 		throw new Error( msg );
 	},
-
-	// data: string of html
-	// context (optional): If specified, the fragment will be created in this context, defaults to document
-	// keepScripts (optional): If true, will include scripts passed in the html string
+//解析节点，var str = "<li>1</li><li>2</li>" ;$.parseHTML把str解析为一个节点数组;
+//context是指定的根节点，keeppScripts这个参数是否解析script标签
 	parseHTML: function( data, context, keepScripts ) {
 		if ( !data || typeof data !== "string" ) {
 			return null;
@@ -488,15 +486,15 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 			context = false;
 		}
 		context = context || document;
-
+		//判断是不是单标签
 		var parsed = rsingleTag.exec( data ),
 			scripts = !keepScripts && [];
 
-		// Single tag
+		// 创建单标签
 		if ( parsed ) {
 			return [ context.createElement( parsed[1] ) ];
 		}
-
+		//创建多标签
 		parsed = jQuery.buildFragment( [ data ], context, scripts );
 
 		if ( scripts ) {
@@ -505,7 +503,7 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 
 		return jQuery.merge( [], parsed.childNodes );
 	},
-
+	//JSON.parse和eval几本上一样，JSON.stringify（）把JSON转换为字符串
 	parseJSON: JSON.parse,
 
 	// Cross-browser xml parsing
@@ -528,10 +526,10 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 		}
 		return xml;
 	},
-
+//返回一个空函数
 	noop: function() {},
 
-	// Evaluates a script in a global context
+	// 全局解析js  jQuery.globalEval("var newVar = true")这样就可以把一个局部变量变成全局的;
 	globalEval: function( code ) {
 		var script,
 				indirect = eval;
@@ -539,36 +537,43 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 		code = jQuery.trim( code );
 
 		if ( code ) {
-			// If the code includes a valid, prologue position
-			// strict mode pragma, execute code by injecting a
-			// script tag into the document.
+			//在严格模式下是利用创建script标签来创建
 			if ( code.indexOf("use strict") === 1 ) {
 				script = document.createElement("script");
 				script.text = code;
 				document.head.appendChild( script ).parentNode.removeChild( script );
 			} else {
-			// Otherwise, avoid the DOM node creation, insertion
-			// and removal by using an indirect global eval
+				//直接使用eval方法和使用window.eval方法是不一样的
+				//并且把eval方法存为一个变量，在使用也是不一样的
+				//eval既是一个关键字也是window下面的属性，当你直接调用的
+				//就是当作一个关键字在使用，只在局部中起作用，wwindow.eval
+				//和存为一个变量在使用就是全局作用下起作用。
 				indirect( code );
 			}
 		}
 	},
 
-	// Convert dashed to camelCase; used by the css and data modules
-	// Microsoft forgot to hump their vendor prefix (#9572)
+	// 把css样式转换为js能接受的样式：：：margin-top->marginTop
 	camelCase: function( string ) {
+		//rmsPrefix正则取-ms-
 		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
 	},
-
+	//判断你给的节点名是否是指定的节点名称
+	//$.nodeName(document.documentElement,"html");
 	nodeName: function( elem, name ) {
 		return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 	},
 
-	// args is for internal usage only
+	// 便利集合，针对数组，类数组，JSON
+	//var array=数组，类数组，JSON
+	//$.each(array,function(i,value){
+	//});
+	//args表示是不是内部使用
 	each: function( obj, callback, args ) {
 		var value,
 			i = 0,
 			length = obj.length,
+			//判断是数组还是类数组
 			isArray = isArraylike( obj );
 
 		if ( args ) {
@@ -613,15 +618,15 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 
 		return obj;
 	},
-
+//字符串去掉空格，只是使用的trim()，这个方法是ECMA5自带的。
 	trim: function( text ) {
 		return text == null ? "" : core_trim.call( text );
 	},
-
-	// results is for internal usage only
+	// 把类数组转换为数组，并且可以把字符串，JSON，都转换为数组
+	//外部使用时一个参数，内部使用时两个参数。
 	makeArray: function( arr, results ) {
 		var ret = results || [];
-
+		//isArraylike()方法只能判断对象，判断这个对象是不是类数组
 		if ( arr != null ) {
 			if ( isArraylike( Object(arr) ) ) {
 				jQuery.merge( ret,
@@ -635,11 +640,11 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 
 		return ret;
 	},
-
+	//数组版本的indexof
 	inArray: function( elem, arr, i ) {
 		return arr == null ? -1 : core_indexOf.call( arr, elem, i );
 	},
-
+	//合并数组，对外就是针对数组，对内可以是数字也可以是JSON
 	merge: function( first, second ) {
 		var l = second.length,
 			i = first.length,
@@ -659,16 +664,14 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 
 		return first;
 	},
-
+	//过滤得到新数组，这个方法和数组方法filter
+	//第三个inv参数是取反的意思。 
 	grep: function( elems, callback, inv ) {
 		var retVal,
 			ret = [],
 			i = 0,
 			length = elems.length;
 		inv = !!inv;
-
-		// Go through the array, only saving the items
-		// that pass the validator function
 		for ( ; i < length; i++ ) {
 			retVal = !!callback( elems[ i ], i );
 			if ( inv !== retVal ) {
@@ -679,7 +682,7 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 		return ret;
 	},
 
-	// arg is for internal usage only
+	// 根据规则映射出新数组，和数组的map的方法很像
 	map: function( elems, callback, arg ) {
 		var value,
 			i = 0,
@@ -713,39 +716,36 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 	},
 
 	// A global GUID counter for objects
-	guid: 1,
+	guid: 1,//唯一标识符，和事件操作有很大的关系。
 
-	// Bind a function to a context, optionally partially applying any
-	// arguments.
+	//改变this的指向的工具方法。
+	/* function show(){
+		alert(1);
+	}
+	$.proxy(show,document)(args1,args2...); */
 	proxy: function( fn, context ) {
 		var tmp, args, proxy;
-
 		if ( typeof context === "string" ) {
 			tmp = fn[ context ];
 			context = fn;
 			fn = tmp;
 		}
-
-		// Quick check to determine if target is callable, in the spec
-		// this throws a TypeError, but we will just return undefined.
 		if ( !jQuery.isFunction( fn ) ) {
 			return undefined;
 		}
-
-		// Simulated bind
 		args = core_slice.call( arguments, 2 );
 		proxy = function() {
 			return fn.apply( context || this, args.concat( core_slice.call( arguments ) ) );
 		};
-
-		// Set the guid of unique handler to the same of original handler, so it can be removed
 		proxy.guid = fn.guid = fn.guid || jQuery.guid++;
-
 		return proxy;
 	},
-
-	// Multifunctional method to get and set values of a collection
-	// The value/s can optionally be executed if it's a function
+//内部方法使用，用于attr css prop等方法的使用
+//用来设置单个或者多个属性的样式的值，获取某个属性‘样式的值
+/* $("document").css("width");这样是获取属性
+$("document").css("width","300px");这样写是设置属性值
+$("#div").css({backgroundColor:"red",width:"30px"});这样写是同时设置多个属性的值 */
+//access就是公用的提供这些功能的方法。	
 	access: function( elems, fn, key, value, chainable, emptyGet, raw ) {
 		var i = 0,
 			length = elems.length,
@@ -796,51 +796,42 @@ jQuery.extend({//jQuery中扩展插件的方法，就是在使用$.extend({}); �
 				fn.call( elems ) :
 				length ? fn( elems[0], key ) : emptyGet;
 	},
-
+//获取当前时间，这样是二次封装，Date.now是ECMA5提供的一个方法。
 	now: Date.now,
-
-	// A method for quickly swapping in/out CSS properties to get correct calculations.
-	// Note: this method belongs to the css module but it's needed here for the support module.
-	// If support gets modularized, this method should be moved back to the css module.
+//css交换的方法，也是一个内部使用的方法，一般使用的不是很多。
+/* $("div").width();这样可以获取到隐藏元素的值，比如设置display：none
+$("div").get(0).offWidth();这样不能获取隐藏元素的值。
+为什么是出现上述两种不一样的结果了，就是因为swap这样方法。 
+jquery的做饭就是把display设置为black并设置visibility为hidden,和设置position:sbsolute，
+获取结果之后在转换回原来的样式。
+记住这个操作是在jQuery中操作。*/
 	swap: function( elem, options, callback, args ) {
 		var ret, name,
 			old = {};
-
-		// Remember the old values, and insert the new ones
 		for ( name in options ) {
 			old[ name ] = elem.style[ name ];
 			elem.style[ name ] = options[ name ];
 		}
-
 		ret = callback.apply( elem, args || [] );
-
-		// Revert the old values
 		for ( name in options ) {
 			elem.style[ name ] = old[ name ];
 		}
-
 		return ret;
 	}
 });
-
+//延迟加载
+/* $(function(){});->$(document).ready(function(){});
+->$().ready()->jQuery.ready.promise().done(fn);
+->if(document.readyState==="complete")else{}->$.ready()
+->readyList.resolveWith( document, [ jQuery ] ) */
 jQuery.ready.promise = function( obj ) {
 	if ( !readyList ) {
-
 		readyList = jQuery.Deferred();
-
-		// Catch cases where $(document).ready() is called after the browser event has already occurred.
-		// we once tried to use readyState "interactive" here, but it caused issues like the one
-		// discovered by ChrisS here: http://bugs.jquery.com/ticket/12282#comment:15
 		if ( document.readyState === "complete" ) {
-			// Handle it asynchronously to allow scripts the opportunity to delay ready
-			setTimeout( jQuery.ready );
-
+			setTimeout( jQuery.ready );//针对IE，延迟执行
 		} else {
-
-			// Use the handy event callback
+			//Dom加载高于Load，当有的浏览器有缓存的时候可能Load先加载，Dom后加载
 			document.addEventListener( "DOMContentLoaded", completed, false );
-
-			// A fallback to window.onload, that will always work
 			window.addEventListener( "load", completed, false );
 		}
 	}
@@ -851,7 +842,7 @@ jQuery.ready.promise = function( obj ) {
 jQuery.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) {
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 });
-
+//判断是不是数组，类数组，或者JSON
 function isArraylike( obj ) {
 	var length = obj.length,
 		type = jQuery.type( obj );
@@ -859,7 +850,7 @@ function isArraylike( obj ) {
 	if ( jQuery.isWindow( obj ) ) {
 		return false;
 	}
-
+//类数组
 	if ( obj.nodeType === 1 && length ) {
 		return true;
 	}
@@ -869,7 +860,7 @@ function isArraylike( obj ) {
 		typeof length === "number" && length > 0 && ( length - 1 ) in obj );
 }
 
-// All jQuery objects should point back to these
+// 获取document的根目录
 rootjQuery = jQuery(document);
 /*!
  * Sizzle CSS Selector Engine v1.9.4-pre
@@ -2884,6 +2875,7 @@ function createOptions( options ) {
  *	stopOnFalse:	interrupt callings when a callback returns false
  *
  */
+ //工具方法，回调对象。
 jQuery.Callbacks = function( options ) {
 
 	// Convert options from String-formatted to Object-formatted if needed
