@@ -200,9 +200,31 @@
  var ob = new SubType("zhang",20);
 console.log(ob);
   
-  
-  
-  
+对象的三个属性：对象的原型，对象的类属性，对象的可扩展性。
+对象的原型：注意通过对象自变量或者Object.create();创建的对象包含一个属性，constructor，这个属性指向Object的构造函数。
+对象的类属性：ECMA3和ECMA5都没有提供设置这个属性的方法，并且只提供了一种间接的方法可以查询它，toString().
+Object.prototype.toString.call(o);-->[object class]
+Object.prototype.toString.call(o);-->class
+注意通过对象自变量和Object.create方法创建的对象的类属性是"Object";
+对象可扩展性：是否可以给对对象添加属性。
+    扩展特性
+        Object.isExtensible 方法
+        Object.preventExtensions 方法，不能添加自由属性，可以添加原型属性，能删除属性，可以修改属性的值；
+
+    密封特性
+        Object.isSealed 方法
+        Object.seal 方法，密封对象是指那些不能添加新的属性，不能删除已有属性，
+        以及不能修改已有属性的可枚举性、可配置性、可写性，但可能可以修改已有属性的值的对象。
+
+    冻结特性
+        Object.isFrozen 方法
+        Object.freeze 方法，冻结对象是指那些不能添加新的属性，不能修改已有属性的值，不能删除已有属性，
+        以及不能修改已有属性的可枚举性、可配置性、可写性的对象。也就是说，这个对象永远是不可变的。
+            浅冻结 与 深冻结
+
+序列化对象：是指将对象转换为字符串，或者将字符串转换为对象。
+对象转换为字符串，ECMA5提供的,JSON.stringify()方法，
+字符串转换为对象，ECMA5提供的,JSON.parse()。
   
   
   
