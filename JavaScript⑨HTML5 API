@@ -1,0 +1,16 @@
+地理位置：navigator.geolocation.getCurrentPosition()获取当前的地理位置
+          navigator.geolocation.watchPosition()监听当前的地理位置
+          navigator.geolocation.clearWatch()取消监听，参数是watchPosition()方法的返回值
+          navigator.geolocation.getCurrentPostion()和navigator.watchPosition()都是需要一个回调函数来进行操作的。
+          回调函数：navigator.geolocation.getCurrentPostion(function(pos){
+              var latitude = pos.coords.latitude;//经度
+              var longitude = pos.coords.longitude;//纬度
+              var accuracy = pos.coords.accuracy;米
+          });
+          这两个方法还可以使用第二个回调函数，当调用失败的时候使用，并且还有第三个参数：是一个配置对象，指定是否需要配置精度，信息
+          过期时间。
+          var options={
+            enableHightAccuracy:false;
+            maximumAge:300000;
+          };
+  历史记录管理：
