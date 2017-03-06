@@ -1,0 +1,8 @@
+URI:通用资源标示符。
+encodeURI 、edcodeUIRComponent其中encodeURI主要用于整个URI，encodeURIComponent只是适用一段URI,他们的主要区别在于：encodeURI是不不会对本省属于
+URI的特殊字符进行编码的，如？#，\,:但是encodeURIComponent则会对它发现的任何非编准的字符进行编码。UR可以编码所有的Unicode字符
+
+
+eval()函数就好像一个解析器，接受一个参数，eval函数会参数当做代码运行，并插入到原位子，被执行的代码具有和该执行环境相同的作用域链。
+但是eval函数磊定义的所有变量和函数都不会别提升，只有在运行eval函数的时候，才会被执行创建，在严格模式喜爱，在外部是访问不到eval函数内的方法和函数的，
+并且在严格模式下，为eval赋值是会报错的。
